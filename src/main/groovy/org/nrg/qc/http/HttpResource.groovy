@@ -6,10 +6,10 @@ import groovyx.net.http.HTTPBuilder;
 class HttpResource {
 	def httpClient
 	
-	def post(String content) {
-		httpClient.post(path: 'update.xml', body: content) { resp ->
-			println "Server response status: ${resp.statusLine}"
-			assert resp.statusLine.statusCode == 200
+	def post(String path, String content) {
+		httpClient.post(path: path, body: content) { resp ->
+			println "Server response status: ${resp.status}"
+			assert resp.status == 200
 		}
 	}
 }
