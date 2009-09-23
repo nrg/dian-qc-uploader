@@ -1,5 +1,6 @@
 package org.nrg.qc.csv;
 
+import java.io.File;
 import groovy.util.GroovyTestCase;
 import au.com.bytecode.opencsv.CSVReader;
 
@@ -33,14 +34,28 @@ class ParserTest extends GroovyTestCase {
 	}
 	
 	void testSingleDataRow(){
-		def reader = makeReader("a,b,c,d\n1,2,3,4")
+		def reader = makeReader("a,b,c,d\n11,2,3,4")
 		
-		assertSize(1, parser.parseCSV(reader))
+		def result = parser.parseCSV(reader)
+		assertSize(1, result)
+		assertEquals(["a":"11", "b":"2", "c":"3", "d":"4"], result[0])
 	}
+	
 	void testMultipleDataRows(){
-		def reader = makeReader('a,b,c,d\n1,2,3,4\nr,r,"r",r')
+		def reader = makeReader('a,b,c,d\n11,2,3,4\nr,r,"r",r')
 		
-		assertSize(2, parser.parseCSV(reader))
+		def result = parser.parseCSV(reader)
+		assertSize(2, result)		
+		assertEquals(["a":"11", "b":"2", "c":"3", "d":"4"], result[0])
+		assertEquals(["a":"r", "b":"r", "c":"r", "d":"r"], result[1])
+	}
+	
+	void testFileName(){
+		def file = File.createTempFile("qcupload_parsing_test", ".csv") << 'y,z\n"test",2'
+		
+		def result = parser.parse(file.path)
+		assertSize(1, result)
+		assertEquals(["y":"test", "z":"2"], result[0])
 	}
 	
 	private void assertEmpty(list){
