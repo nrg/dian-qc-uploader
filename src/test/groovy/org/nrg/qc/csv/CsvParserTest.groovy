@@ -4,9 +4,6 @@ import java.io.File;
 import groovy.util.GroovyTestCase;
 import au.com.bytecode.opencsv.CSVReader;
 
-//import static org.mockito.Mockito.*
-
-
 class ParserTest extends GroovyTestCase {
 	
 	Parser parser
