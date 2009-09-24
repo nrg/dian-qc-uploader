@@ -1,7 +1,7 @@
-package org.nrg.qc.csv;
+package org.nrg.dian.qc.csv;
 
-import org.nrg.qc.model.MrScanAssessment;
-import org.nrg.qc.model.SessionAssessment;
+import org.nrg.dian.qc.model.MrScanAssessment;
+import org.nrg.dian.qc.model.SessionAssessment;
 
 
 class Merger {

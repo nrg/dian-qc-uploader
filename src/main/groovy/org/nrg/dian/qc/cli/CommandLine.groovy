@@ -1,4 +1,4 @@
-package org.nrg.qc.cli;
+package org.nrg.dian.qc.cli;
 
 import groovy.util.CliBuilder;
 

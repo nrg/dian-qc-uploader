@@ -1,4 +1,7 @@
-package org.nrg.qc.http;
+package org.nrg.dian.qc.http;
+
+import org.nrg.dian.qc.http.HttpFactory;
+import org.nrg.dian.qc.http.HttpResource;
 
 import groovy.util.GroovyTestCase;
 

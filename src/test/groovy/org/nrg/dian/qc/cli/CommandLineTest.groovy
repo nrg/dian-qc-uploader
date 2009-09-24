@@ -1,5 +1,5 @@
-package org.nrg.qc.cli;
-import org.codehaus.groovy.runtime.StringBufferWriter;
+package org.nrg.dian.qc.cli;
+
 import groovy.util.GroovyTestCase;
 
 class CommandLineTest extends GroovyTestCase {

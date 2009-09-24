@@ -1,4 +1,4 @@
-package org.nrg.qc.http;
+package org.nrg.dian.qc.http;
 
 
 import groovy.util.GroovyTestCase;

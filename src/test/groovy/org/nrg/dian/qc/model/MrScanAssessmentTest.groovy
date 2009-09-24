@@ -1,6 +1,7 @@
-package org.nrg.qc.model;
+package org.nrg.dian.qc.model;
 
 import org.custommonkey.xmlunit.Diff;
+import org.nrg.dian.qc.model.MrScanAssessment;
 
 public class MrScanAssessmentTest extends ModelXmlTestCase {
 	MrScanAssessment scan

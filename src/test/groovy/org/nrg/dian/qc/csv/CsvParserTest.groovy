@@ -1,6 +1,9 @@
-package org.nrg.qc.csv;
+package org.nrg.dian.qc.csv;
 
 import java.io.File;
+
+import org.nrg.dian.qc.csv.Parser;
+
 import groovy.util.GroovyTestCase;
 import au.com.bytecode.opencsv.CSVReader;
 

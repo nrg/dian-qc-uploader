@@ -8,9 +8,9 @@
 
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>org.nrg.qc</groupId>
-	<artifactId>qcupload</artifactId>
-	<name>Mayo Quality Control Uploader</name>
+	<groupId>org.nrg.dian</groupId>
+	<artifactId>dian-qc-uploader</artifactId>
+	<name>DIAN Quality Control Uploader</name>
 	<version>0.1-SNAPSHOT</version>
 
 	<url>http://www.xnat.org</url>

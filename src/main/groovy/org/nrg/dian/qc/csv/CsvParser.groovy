@@ -1,4 +1,4 @@
-package org.nrg.qc.csv;
+package org.nrg.dian.qc.csv;
 
 import au.com.bytecode.opencsv.CSVReader;
 

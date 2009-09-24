@@ -1,4 +1,6 @@
-package org.nrg.qc.model;
+package org.nrg.dian.qc.model;
+
+import org.nrg.dian.qc.model.SessionAssessment;
 
 class SessionAssessmentTest extends ModelXmlTestCase {
 	SessionAssessment session

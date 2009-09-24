@@ -1,4 +1,4 @@
-package org.nrg.qc.model;
+package org.nrg.dian.qc.model;
 
 import groovy.xml.StreamingMarkupBuilder;
 

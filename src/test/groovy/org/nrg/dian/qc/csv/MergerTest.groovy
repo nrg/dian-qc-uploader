@@ -1,4 +1,6 @@
-package org.nrg.qc.csv;
+package org.nrg.dian.qc.csv;
+
+import org.nrg.dian.qc.csv.Merger;
 
 import groovy.util.GroovyTestCase;
 

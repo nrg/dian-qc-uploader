@@ -1,7 +1,7 @@
-package org.nrg.qc.controller;
+package org.nrg.dian.qc.controller;
 
-import org.nrg.qc.cli.CommandLine;
 import org.springframework.context.ApplicationContext;
+import org.nrg.dian.qc.cli.CommandLine;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 class UploadController {
