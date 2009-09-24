@@ -1,7 +1,5 @@
 package org.nrg.qc.model;
 
-
-
 class SessionAssessmentTest extends ModelXmlTestCase {
 	SessionAssessment session
 	
@@ -98,7 +96,6 @@ class SessionAssessmentTest extends ModelXmlTestCase {
 				"xnat:payable" "1"
 			}
 		}
-		print session.toXml()
 		assertExpectedXml(expected, session)
 	}
 }

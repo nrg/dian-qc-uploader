@@ -6,7 +6,7 @@ class CommandLine {
 	private CliBuilder cli
 	
 	CommandLine() {
-		cli = new CliBuilder(usage: 'groovy uploadqc -s <server> -u <user> -p <password> <qualityfile> <inclusionfile> <protocolfile>')
+		cli = new CliBuilder(usage: 'groovy uploadqc -s <server> -u <user> -p <password> <projectid> <qualityfile> <inclusionfile> <protocolfile>')
 		
 		cli.with {
 			h longOpt: 'help', 'Show usage information'
@@ -23,13 +23,13 @@ class CommandLine {
 		}
 		
 		def extraArguments = options.arguments()
-		if (!extraArguments || extraArguments.size() != 3) {
+		if (!extraArguments || extraArguments.size() != 4) {
 			error()
 		}
 		
 		return ["server": options.s, "user": options.u, "password": options.p, 
-		        "qualityfile":extraArguments[0], "inclusionfile":extraArguments[1],
-		        "protocolfile":extraArguments[2]]
+		        "projectid": extraArguments[0], "qualityfile": extraArguments[1], 
+		        "inclusionfile": extraArguments[2], "protocolfile": extraArguments[3]]
 	}
 	
 	private def error(){

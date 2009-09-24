@@ -10,7 +10,7 @@ class Parser {
 	}
 	
 	List<Map<String, String>> parseCSV(CSVReader csvReader){
-		def maps = []
+		def records = []
 		List<String[]> lines = csvReader.readAll()
 		if (lines.size() >= 2){
 			def header = lines[0]
@@ -18,9 +18,9 @@ class Parser {
 			body.each {row -> 
 				def map = [:]
 				row.eachWithIndex { elem, i -> map[header[i]] = elem } 
-				maps.add map
+				records.add map
 			}
 		}
-		return maps
+		return records
 	}
 }

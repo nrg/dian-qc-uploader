@@ -2,7 +2,7 @@ package org.nrg.qc.model;
 
 import groovy.xml.StreamingMarkupBuilder;
 
-public class ModelXmlTestCase extends GroovyTestCase {
+public abstract class ModelXmlTestCase extends GroovyTestCase {
 	def expected
 	def builder
 	

@@ -5,13 +5,11 @@ import groovy.util.GroovyTestCase;
 import au.com.bytecode.opencsv.CSVReader;
 
 class ParserTest extends GroovyTestCase {
-	
 	Parser parser
 	def file
 	
 	void setUp() throws Exception {
 		parser = new Parser();
-		//file = mock(FileReader.class)
 	}
 	
 	void testEmptyFile(){
