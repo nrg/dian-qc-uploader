@@ -1,21 +1,16 @@
 package org.nrg.qc.model;
 
-import groovy.util.GroovyTestCase;
+import groovy.xml.StreamingMarkupBuilder;
 
 public class ModelXmlTestCase extends GroovyTestCase {
-	def writer
 	def expected
+	def builder
 	
-	protected void setUp() throws Exception {
-		writer = new StringWriter()
-		expected = new groovy.xml.MarkupBuilder(writer)
-	}
-
-	void assertExpectedXml(xml) {
-		assertEquals(getExpectedXml(), xml)
+	void setUp() throws Exception {
+		builder = new StreamingMarkupBuilder()
 	}
 	
-	def getExpectedXml(){
-		return writer.toString()
+	void assertExpectedXml(expected, obj) {
+		assertEquals(expected.toString(), obj.toXml())
 	}
 }
