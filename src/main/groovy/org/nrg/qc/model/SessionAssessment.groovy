@@ -21,38 +21,34 @@ class SessionAssessment {
 	List<MrScanAssessment> scans = [];
 	
 	String toXml() {
-		def writer = new StringWriter()
 		def xml = new StreamingMarkupBuilder().bind{
-			mkp.xmlDeclaration()
-			
 			"xnat:QCManualAssessment" ("ID":id, "project":project, 
-					"xmlns:prov":"http://www.nbirn.net/prov", 
-					"xmlns:xnat":"http://nrg.wustl.edu/xnat",
-					"xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance", 
-					"xsi:schemaLocation":"http://nrg.wustl.edu/xnat plugin-resources/project-skeletons/xnat/src/schemas/xnat/xnat.xsd"){ 
-						
-						if (rater){
-							"xnat:rater" rater
-						}
-						if (stereotacticMarker){
-							"xnat:stereotacticMarker" stereotacticMarker
-						}
-						if (incidentalFindings){
-							"xnat:incidentalFindings" incidentalFindings
-						}
-						"xnat:scans" {
-							for (scan in scans) {
-								mkp.yieldUnescaped scan.toXml()
-							}
-						}
-						if (comments){
-							"xnat:comments" comments
-						}
-						"xnat:pass" pass
-						if (payable){
-							"xnat:payable" payable
-						}
+			"xmlns:prov":"http://www.nbirn.net/prov", 
+			"xmlns:xnat":"http://nrg.wustl.edu/xnat",
+			"xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance", 
+			"xsi:schemaLocation":"http://nrg.wustl.edu/xnat plugin-resources/project-skeletons/xnat/src/schemas/xnat/xnat.xsd"){ 
+				if (rater){
+					"xnat:rater" rater
+				}
+				if (stereotacticMarker){
+					"xnat:stereotacticMarker" stereotacticMarker
+				}
+				if (incidentalFindings){
+					"xnat:incidentalFindings" incidentalFindings
+				}
+				"xnat:scans" {
+					for (scan in scans) {
+						unescaped << scan.toXml()
 					}
+				}
+				if (comments){
+					"xnat:comments" comments
+				}
+				"xnat:pass" pass
+				if (payable){
+					"xnat:payable" payable
+				}
+			}
 		}
 		return xml.toString()
 	}
