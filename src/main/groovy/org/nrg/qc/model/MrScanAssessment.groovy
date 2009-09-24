@@ -2,7 +2,7 @@ package org.nrg.qc.model;
 
 import groovy.util.NodeBuilder;
 
-class MrScan {
+class MrScanAssessment {
 	def imageScan_ID
 	def coverage
 	def motion
@@ -38,9 +38,7 @@ class MrScan {
 			if (comments) {
 				"xnat:comments" comments
 			}
-			if (pass) {
-				"xnat:pass" pass
-			}
+			"xnat:pass" pass
 			if (blurring){
 				"xnat:blurring" blurring
 			}
