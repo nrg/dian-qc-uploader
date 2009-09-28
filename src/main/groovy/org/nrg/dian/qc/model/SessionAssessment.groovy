@@ -11,6 +11,7 @@ class SessionAssessment {
 	
 	def id
 	def project
+	def session_id
 	def rater
 	def stereotacticMarker
 	def incidentalFindings
@@ -19,9 +20,14 @@ class SessionAssessment {
 	def payable
 	
 	List<MrScanAssessment> scans = [];
+
+	String toString(){
+		return toXml()
+	}
 	
 	String toXml() {
 		def xml = new StreamingMarkupBuilder().bind{
+			mkp.xmlDeclaration()
 			"xnat:QCManualAssessment" ("ID":id, "project":project, 
 			"xmlns:prov":"http://www.nbirn.net/prov", 
 			"xmlns:xnat":"http://nrg.wustl.edu/xnat",

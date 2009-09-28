@@ -1,16 +1,16 @@
 package org.nrg.dian.qc.http;
 
-import groovyx.net.http.HTTPBuilder;
-
+import static groovyx.net.http.ContentType.TEXT
 
 class HttpResource {
 	def httpClient
 	
 	def post(String path, String content) {
-		httpClient.post(path: path, body: content) { resp ->
-			println "Server response status: ${resp.status}"
-			assert resp.status == 200
-		}
+		httpClient.post(path: path, requestContentType: TEXT, body: content) { resp -> return resp }
+	}
+	
+	def delete(String path) {
+		httpClient.delete(path: path) { resp -> return resp }
 	}
 }
 

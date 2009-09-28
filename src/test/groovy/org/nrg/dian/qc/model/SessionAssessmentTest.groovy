@@ -12,6 +12,7 @@ class SessionAssessmentTest extends ModelXmlTestCase {
 	
 	void testToXmlEmpty(){
 		def expected = builder.bind{
+			mkp.xmlDeclaration()
 			"xnat:QCManualAssessment" ("ID":"", "project":"", 
 			"xmlns:prov":"http://www.nbirn.net/prov", 
 			"xmlns:xnat":"http://nrg.wustl.edu/xnat",
@@ -35,6 +36,7 @@ class SessionAssessmentTest extends ModelXmlTestCase {
 		session.payable = "1"
 		
 		def expected = builder.bind{
+			mkp.xmlDeclaration()
 			"xnat:QCManualAssessment" ("ID":"test_135", "project":"Demo", 
 			"xmlns:prov":"http://www.nbirn.net/prov", 
 			"xmlns:xnat":"http://nrg.wustl.edu/xnat",
@@ -56,6 +58,7 @@ class SessionAssessmentTest extends ModelXmlTestCase {
 	void testToXmlWithScan(){
 		session.scans.add(new MrScanAssessment([imageScan_ID: "ab1", pass:"1"]))
 		def expected = builder.bind{
+			mkp.xmlDeclaration()
 			"xnat:QCManualAssessment" ("ID":"", "project":"", 
 			"xmlns:prov":"http://www.nbirn.net/prov", 
 			"xmlns:xnat":"http://nrg.wustl.edu/xnat",
@@ -79,6 +82,7 @@ class SessionAssessmentTest extends ModelXmlTestCase {
 		session.scans.add(new MrScanAssessment([imageScan_ID: "ab1", pass:"1"]))
 		session.scans.add(new MrScanAssessment([imageScan_ID: "ab2", pass:"0"]))
 		def expected = builder.bind{
+			mkp.xmlDeclaration()
 			"xnat:QCManualAssessment" ("ID":"", "project":"", 
 			"xmlns:prov":"http://www.nbirn.net/prov", 
 			"xmlns:xnat":"http://nrg.wustl.edu/xnat",

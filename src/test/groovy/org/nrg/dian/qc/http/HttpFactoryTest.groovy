@@ -1,8 +1,5 @@
 package org.nrg.dian.qc.http;
 
-import org.nrg.dian.qc.http.HttpFactory;
-import org.nrg.dian.qc.http.HttpResource;
-
 import groovy.util.GroovyTestCase;
 
 class HttpFactoryTest extends GroovyTestCase {
@@ -17,6 +14,6 @@ class HttpFactoryTest extends GroovyTestCase {
 		assertNotNull(resource)
 		assertTrue(resource instanceof HttpResource)
 		assertEquals("http://localhost", resource.httpClient.uri.toString())
-		assertNotNull("scott", resource.httpClient.auth)
+		assertNotNull(resource.httpClient.auth)
 	}
 }

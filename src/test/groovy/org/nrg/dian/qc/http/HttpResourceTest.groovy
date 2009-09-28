@@ -19,9 +19,11 @@ class HttpResourceTest extends GroovyTestCase {
 		http.post = { x, y ->
 			assertEquals(SAMPLE_PATH, x.path)
 			assertEquals(SAMPLE_DOCUMENT, x.body)
+			assertEquals("text/plain", x.requestContentType.toString())
 		}
 		
-		resource.post(SAMPLE_PATH, SAMPLE_DOCUMENT)
+		def response = resource.post(SAMPLE_PATH, SAMPLE_DOCUMENT)
+		
 	}	
 	
 	void testPostSuccess(){
@@ -29,14 +31,26 @@ class HttpResourceTest extends GroovyTestCase {
 			y(['status': 200])
 		}
 		
-		resource.post(SAMPLE_PATH, SAMPLE_DOCUMENT)
+		def response = resource.post(SAMPLE_PATH, SAMPLE_DOCUMENT)
+		assertEquals(200, response.status)
 	}
 	
 	void testPostFailure(){
 		http.post = { x, y ->
-			shouldFail({ y(['status': 404]) })
+			y(['status': 404])
 		}
 		
-		resource.post(SAMPLE_PATH, SAMPLE_DOCUMENT)
+		def response = resource.post(SAMPLE_PATH, SAMPLE_DOCUMENT)
+		assertEquals(404, response.status)
+	}
+	
+	void testDelete(){
+		http.delete = { x, y ->
+			assertEquals(SAMPLE_PATH, x.path)
+			y(['status': 200])
+		}
+		
+		def response = resource.delete(SAMPLE_PATH)
+		assertEquals(200, response.status)
 	}
 }

@@ -10,10 +10,7 @@ class Merger {
 		uniqueId(records).each { id ->
 			
 			SessionAssessment session = new SessionAssessment()
-			//
-			// get session id from REST API [patientId: id["patid"], date: id["sdate"]]
-			//
-			session.incidentalFindings
+			session.session_id = id["patid"]
 			session.pass = SessionAssessment.PASS // default to passing
 			session.stereotacticMarker = null // default to not evaluated
 			filter(id, qualityRecords).each { record ->
@@ -41,6 +38,7 @@ class Merger {
 					session.stereotacticMarker = marker
 				}
 			}
+			session.incidentalFindings
 		}
 	}
 	
