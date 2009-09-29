@@ -20,6 +20,5 @@ class CommandLineTest extends GroovyTestCase {
 		assertEquals("project1", options.projectid)
 		assertEquals("quality.csv", options.qualityfile)
 		assertEquals("inclusion.csv", options.inclusionfile)
-		assertEquals("protocol.csv", options.protocolfile)
 	}
 }

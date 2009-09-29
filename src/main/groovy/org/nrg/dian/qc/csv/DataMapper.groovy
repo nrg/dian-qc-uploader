@@ -4,9 +4,9 @@ import org.nrg.dian.qc.model.MrScanAssessment;
 import org.nrg.dian.qc.model.SessionAssessment;
 
 
-class Merger {
+class DataMapper {
 	//	<qualityfile> <inclusionfile> <protocolfile>
-	List<SessionAssessment> merge(qualityRecords){
+	List<SessionAssessment> map(qualityRecords, inclusionRecords){
 		uniqueId(records).each { id ->
 			
 			SessionAssessment session = new SessionAssessment()

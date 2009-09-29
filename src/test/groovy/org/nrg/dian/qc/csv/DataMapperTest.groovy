@@ -1,27 +1,27 @@
 package org.nrg.dian.qc.csv;
 
-import org.nrg.dian.qc.csv.Merger;
+import org.nrg.dian.qc.csv.DataMapper;
 
 import groovy.util.GroovyTestCase;
 
-class MergerTest extends GroovyTestCase {
-	Merger merger
+class DataMapperTest extends GroovyTestCase {
+	DataMapper mapper
 	
 	void setUp() {
-		merger = new Merger()
+		mapper = new DataMapper()
 	}
 	
 	void testUniqueIdSingleRecord(){
 		def records = [record("56", "20091025", "1")]
 		def expected = [["patid":"56", "sdate":"20091025"]] 
-		assertEquals(expected, merger.uniqueId(records))
+		assertEquals(expected, mapper.uniqueId(records))
 	}
 	
 	void testUniqueIdMutipleIdsSingleRecords(){
 		def records = [record("56", "20091025", "1"),
 		record("56", "20091026", "1")]
 		def expected = [["patid":"56", "sdate":"20091025"], ["patid":"56", "sdate":"20091026"]] 
-		assertEquals(expected, merger.uniqueId(records))
+		assertEquals(expected, mapper.uniqueId(records))
 	}
 	
 	
@@ -29,7 +29,7 @@ class MergerTest extends GroovyTestCase {
 		def records = [record("56", "20091025", "1"),
 		record("56", "20091025", "2")]
 		def expected = [["patid":"56", "sdate":"20091025"]] 
-		assertEquals(expected, merger.uniqueId(records))
+		assertEquals(expected, mapper.uniqueId(records))
 	}
 	
 	void testUniqueIdMutipleIdsMultipleRecords(){
@@ -38,19 +38,19 @@ class MergerTest extends GroovyTestCase {
 		record("700", "20091025", "1"),
 		record("700", "20091025", "13")]
 		def expected = [["patid":"56", "sdate":"20091025"], ["patid":"700", "sdate":"20091025"]] 
-		assertEquals(expected, merger.uniqueId(records))
+		assertEquals(expected, mapper.uniqueId(records))
 	}
 	
 	void testFilter(){
 		def records = [record("56", "20091025", "1")]
 		def expected = records
-		assertEquals(expected, merger.filter(["patid": "56", "sdate": "20091025"], records))
+		assertEquals(expected, mapper.filter(["patid": "56", "sdate": "20091025"], records))
 	}
 	
 	void testFilterNotInList(){
 		def records = [record("56", "20091025", "1")]
 		def expected = []
-		assertEquals(expected, merger.filter(["patid": "700", "sdate": "20091025"], records))
+		assertEquals(expected, mapper.filter(["patid": "700", "sdate": "20091025"], records))
 	}
 	
 	void testFilterMultiple(){
@@ -59,27 +59,27 @@ class MergerTest extends GroovyTestCase {
 		record("56", "20091025", "3"),
 		record("56", "20091026", "4")]
 		def expected = records[0,2]
-		assertEquals(expected, merger.filter(["patid": "56", "sdate": "20091025"], records))
+		assertEquals(expected, mapper.filter(["patid": "56", "sdate": "20091025"], records))
 	}
 	
 	void testScoreRegularValue(){
-		assertEquals("2", merger.score("2"))
+		assertEquals("2", mapper.score("2"))
 	}
 	
 	void testScoreRegularValuePadded(){
-		assertEquals("1", merger.score(" 1 "))
+		assertEquals("1", mapper.score(" 1 "))
 	}
 	
 	void testScoreZero(){
-		assertEquals("0", merger.score("0"))
+		assertEquals("0", mapper.score("0"))
 	}
 	
 	void testScoreEmpty(){
-		assertEquals("0", merger.score(" "))
+		assertEquals("0", mapper.score(" "))
 	}
 	
 	void testScoreNegativeOne(){
-		assertNull(merger.score("-1"))
+		assertNull(mapper.score("-1"))
 	}
 	
 	

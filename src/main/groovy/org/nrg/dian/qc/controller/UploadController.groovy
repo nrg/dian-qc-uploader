@@ -8,11 +8,12 @@ class UploadController {
 	private static ApplicationContext SPRING_CONTEXT
 	
 	def run(options){
-		// parse the files
-		def csvParser = getCsvParser()
-		csvParser.parse(options.qualityfile)
-		csvParser.parse(options.inclusionfile)
-		csvParser.parse(options.protocolfile)
+		def assessments = map(options.qualityfile, options.inclusionfile)
+
+		assessments.each {
+			
+		}
+
 		// group into sessions
 		// for each session
 		//		find session ID from REST
@@ -20,7 +21,21 @@ class UploadController {
 		// 		submit XML to REST API
 	}
 
-	def get
+	def map(qualityFile, inclusionFile){
+		def csvParser = getCsvParser()
+		def qualityRecords = csvParser.parse(qualityFile)
+		def inclusionRecords = csvParser.parse(inclusionFile)
+
+		return getDataMapper().map(qualityRecords, inclusionRecords)
+	}
+	
+	def getDataMapper(){
+		return getBean("dataMapper")
+	}
+	
+	def getHttpFactory(){
+		return getBean("httpFactory")
+	}
 	
 	def getCsvParser(){
 		return getBean("csvParser")
