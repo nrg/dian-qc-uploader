@@ -12,9 +12,9 @@ class HttpResourceTest extends GroovyTestCase {
 	
 	void setUp(){
 		http = [:]
-		resource = new HttpResource(httpClient: http)
+		resource = new HttpResource(httpClient: ["connect": { http }])
 	}
-	
+
 	void testPost(){
 		http.post = { x, y ->
 			assertEquals(SAMPLE_PATH, x.path)
@@ -23,7 +23,6 @@ class HttpResourceTest extends GroovyTestCase {
 		}
 		
 		def response = resource.post(SAMPLE_PATH, SAMPLE_DOCUMENT)
-		
 	}	
 	
 	void testPostSuccess(){

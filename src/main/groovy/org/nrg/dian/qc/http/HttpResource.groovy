@@ -6,11 +6,10 @@ class HttpResource {
 	def httpClient
 	
 	def post(String path, String content) {
-		httpClient.post(path: path, requestContentType: TEXT, body: content) { resp -> return resp }
+		httpClient.connect().post(path: path, requestContentType: TEXT, body: content) { resp -> return resp }
 	}
 	
 	def delete(String path) {
-		httpClient.delete(path: path) { resp -> return resp }
+		httpClient.connect().delete(path: path) { resp -> return resp }
 	}
 }
-
