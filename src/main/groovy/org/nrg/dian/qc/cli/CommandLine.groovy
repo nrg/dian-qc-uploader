@@ -6,7 +6,7 @@ class CommandLine {
 	private CliBuilder cli
 	
 	CommandLine() {
-		cli = new CliBuilder(usage: 'java -jar dian-qc-uploader.jar -s <server> -u <user> -p <password> <projectid> <qualityfile> <inclusionfile>')
+		cli = new CliBuilder(usage: 'java -jar dian-qc-uploader.jar -s <server> -u <user> -p <password> <qualityfile> <inclusionfile>')
 		
 		cli.with {
 			h longOpt: 'help', 'Show usage information'
@@ -23,13 +23,12 @@ class CommandLine {
 		}
 		
 		def extraArguments = options.arguments()
-		if (!extraArguments || extraArguments.size() != 3) {
+		if (!extraArguments || extraArguments.size() != 2) {
 			error()
 		}
 		
 		return ["server": options.s, "user": options.u, "password": options.p, 
-		        "projectid": extraArguments[0], "qualityfile": extraArguments[1], 
-		        "inclusionfile": extraArguments[2]]
+		        "qualityfile": extraArguments[0], "inclusionfile": extraArguments[1]]
 	}
 	
 	private def error(){
