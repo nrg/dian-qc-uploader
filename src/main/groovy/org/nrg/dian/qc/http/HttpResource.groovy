@@ -2,14 +2,14 @@ package org.nrg.dian.qc.http;
 
 import static groovyx.net.http.ContentType.TEXT
 
-class HttpResource {
-	def httpClient
+class HttpClient {
+	def httpFactory
 	
 	def post(String path, String content) {
-		httpClient.connect().post(path: path, requestContentType: TEXT, body: content) { resp -> return resp }
+		httpFactory.connect().post(path: path, requestContentType: TEXT, body: content) { resp -> return resp }
 	}
 	
 	def delete(String path) {
-		httpClient.connect().delete(path: path) { resp -> return resp }
+		httpFactory.connect().delete(path: path) { resp -> return resp }
 	}
 }

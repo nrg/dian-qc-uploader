@@ -12,7 +12,7 @@ class CommandLineTest extends GroovyTestCase {
 	void testParse(){
 		def options = cli.parse(["-s", "http://cnda.wustl.edu:8000", 
 		                         "-u", "scott", "-p", "tiger", "project1",
-		                         "quality.csv", "inclusion.csv", "protocol.csv"])
+		                         "quality.csv", "inclusion.csv"])
 
 		assertEquals("http://cnda.wustl.edu:8000", options.server)
 		assertEquals("scott", options.user)

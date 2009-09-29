@@ -1,5 +1,9 @@
 package org.nrg.dian.qc.model;
 
+import java.text.SimpleDateFormat;
+
+import org.nrg.dian.qc.util.DateUtil;
+
 import groovy.xml.StreamingMarkupBuilder;
 
 /** 
@@ -10,6 +14,7 @@ class SessionAssessment {
 	static final String FAIL = "0"
 	
 	def id
+	Date date
 	def project
 	def session_id
 	def rater
@@ -20,10 +25,6 @@ class SessionAssessment {
 	def payable
 	
 	List<MrScanAssessment> scans = [];
-
-	String toString(){
-		return toXml()
-	}
 	
 	String toXml() {
 		def xml = new StreamingMarkupBuilder().bind{
@@ -33,8 +34,13 @@ class SessionAssessment {
 			"xmlns:xnat":"http://nrg.wustl.edu/xnat",
 			"xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance", 
 			"xsi:schemaLocation":"http://nrg.wustl.edu/xnat plugin-resources/project-skeletons/xnat/src/schemas/xnat/xnat.xsd"){ 
+				"xnat:imageSession_ID" session_id
 				if (rater){
 					"xnat:rater" rater
+				}
+				if (date){
+					"xnat:date" DateUtil.dateFormat(date)
+					"xnat:time" DateUtil.timeFormat(date)
 				}
 				if (stereotacticMarker){
 					"xnat:stereotacticMarker" stereotacticMarker

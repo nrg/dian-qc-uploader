@@ -3,7 +3,7 @@ package org.nrg.dian.qc.http;
 
 import groovy.util.GroovyTestCase;
 
-class HttpResourceTest extends GroovyTestCase {
+class HttpClientTest extends GroovyTestCase {
 	private static final String SAMPLE_PATH = "/REST/assessment"
 	private static final String SAMPLE_DOCUMENT = "<doc>hello</doc>"
 	
@@ -12,7 +12,7 @@ class HttpResourceTest extends GroovyTestCase {
 	
 	void setUp(){
 		http = [:]
-		resource = new HttpResource(httpClient: ["connect": { http }])
+		resource = new HttpClient(httpFactory: ["connect": { http }])
 	}
 
 	void testPost(){

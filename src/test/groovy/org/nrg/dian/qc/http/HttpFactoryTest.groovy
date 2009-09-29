@@ -1,6 +1,7 @@
 package org.nrg.dian.qc.http;
 
 import groovy.util.GroovyTestCase;
+import groovyx.net.http.HTTPBuilder;
 
 class HttpFactoryTest extends GroovyTestCase {
 	HttpFactory factory
@@ -10,10 +11,10 @@ class HttpFactoryTest extends GroovyTestCase {
 	}
 	
 	void testConnect(){
-		def resource = factory.connect()
-		assertNotNull(resource)
-		assertTrue(resource instanceof HttpResource)
-		assertEquals("http://localhost", resource.httpClient.uri.toString())
-		assertNotNull(resource.httpClient.auth)
+		def http = factory.connect()
+		assertNotNull(http)
+		assertTrue(http instanceof HTTPBuilder)
+		assertEquals("http://localhost", http.uri.toString())
+		assertNotNull(http.auth)
 	}
 }

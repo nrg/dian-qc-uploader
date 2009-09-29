@@ -4,7 +4,7 @@ import org.nrg.dian.qc.model.SessionAssessment;
 import groovy.util.GroovyTestCase;
 
 import org.nrg.dian.qc.http.HttpFactory;
-import org.nrg.dian.qc.http.HttpResource;
+import org.nrg.dian.qc.http.HttpClient;
 import static groovyx.net.http.ContentType.TEXT;
 
 class PostSessionToXnatTest extends GroovyTestCase {
@@ -27,7 +27,7 @@ class PostSessionToXnatTest extends GroovyTestCase {
 	
 	void testPost(){
 		def factory = new HttpFactory()
-		HttpResource http = factory.connect("http://localhost:8080", "admin", "admin")
+		HttpClient http = factory.connect("http://localhost:8080", "admin", "admin")
 		def response = http.post("/xnat/REST/projects/${session.project}/subjects/${session.session_id}/experiments/SampleID/assessors", session.toXml())
 		assertEquals(200, response.status)
 	}

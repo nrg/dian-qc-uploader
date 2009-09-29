@@ -20,9 +20,7 @@ class MrScanAssessment {
 	String toXml(){
 		def xml = new StreamingMarkupBuilder().bind{
 			"xnat:scan" ("xsi:type": "xnat:mrQcScanData") {
-				if (imageScan_ID){ 
-					"xnat:imageScan_ID" imageScan_ID
-				}
+				"xnat:imageScan_ID" imageScan_ID
 				if (coverage){
 					"xnat:coverage" coverage
 				}

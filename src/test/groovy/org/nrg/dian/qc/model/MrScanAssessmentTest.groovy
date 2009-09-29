@@ -13,7 +13,10 @@ public class MrScanAssessmentTest extends ModelXmlTestCase {
 	
 	void testToXmlEmpty(){
 		def expected = builder.bind{
-			"xnat:scan" ("xsi:type":"xnat:mrQcScanData") { "xnat:pass" null }
+			"xnat:scan" ("xsi:type":"xnat:mrQcScanData") {
+				"xnat:imageScan_ID" null 
+				"xnat:pass" null
+			}
 		}
 		assertExpectedXml(expected, scan)
 	}	
@@ -33,6 +36,7 @@ public class MrScanAssessmentTest extends ModelXmlTestCase {
 		scan.coverage = "1"
 		def expected = builder.bind{
 			"xnat:scan" ("xsi:type":"xnat:mrQcScanData") {
+				"xnat:imageScan_ID" null 
 				"xnat:coverage" "1" 
 				"xnat:pass" null
 			}
@@ -44,6 +48,7 @@ public class MrScanAssessmentTest extends ModelXmlTestCase {
 		scan.motion = "1"
 		def expected = builder.bind{
 			"xnat:scan" ("xsi:type":"xnat:mrQcScanData") {
+				"xnat:imageScan_ID" null 
 				"xnat:motion" "1"
 				"xnat:pass" null
 			}
@@ -55,6 +60,7 @@ public class MrScanAssessmentTest extends ModelXmlTestCase {
 		scan.otherImageArtifacts = "0"
 		def expected = builder.bind{
 			"xnat:scan" ("xsi:type":"xnat:mrQcScanData") {
+				"xnat:imageScan_ID" null 
 				"xnat:otherImageArtifacts" "0" 
 				"xnat:pass" null
 			}
@@ -66,6 +72,7 @@ public class MrScanAssessmentTest extends ModelXmlTestCase {
 		scan.comments = "Mild ringing"
 		def expected = builder.bind{
 			"xnat:scan" ("xsi:type":"xnat:mrQcScanData") {
+				"xnat:imageScan_ID" null 
 				"xnat:comments" "Mild ringing" 
 				"xnat:pass" null
 			}
@@ -76,7 +83,10 @@ public class MrScanAssessmentTest extends ModelXmlTestCase {
 	void testToXmlOnlyPass(){
 		scan.pass = "1"
 		def expected = builder.bind{
-			"xnat:scan" ("xsi:type":"xnat:mrQcScanData") {  "xnat:pass" "1" }
+			"xnat:scan" ("xsi:type":"xnat:mrQcScanData") {
+				"xnat:imageScan_ID" null 
+				"xnat:pass" "1"
+			}
 		}
 		assertExpectedXml(expected, scan)
 	}
@@ -85,6 +95,7 @@ public class MrScanAssessmentTest extends ModelXmlTestCase {
 		scan.blurring = "1"
 		def expected = builder.bind{
 			"xnat:scan" ("xsi:type":"xnat:mrQcScanData") {
+				"xnat:imageScan_ID" null 
 				"xnat:pass" null
 				"xnat:blurring" "1"
 			}
@@ -96,6 +107,7 @@ public class MrScanAssessmentTest extends ModelXmlTestCase {
 		scan.flow = "2"
 		def expected = builder.bind{
 			"xnat:scan" ("xsi:type":"xnat:mrQcScanData") {
+				"xnat:imageScan_ID" null 
 				"xnat:pass" null
 				"xnat:flow" "2"
 			}
@@ -107,6 +119,7 @@ public class MrScanAssessmentTest extends ModelXmlTestCase {
 		scan.imageContrast = "1"
 		def expected = builder.bind{
 			"xnat:scan" ("xsi:type":"xnat:mrQcScanData") {
+				"xnat:imageScan_ID" null 
 				"xnat:pass" null
 				"xnat:imageContrast" "1"
 			}
@@ -118,6 +131,7 @@ public class MrScanAssessmentTest extends ModelXmlTestCase {
 		scan.wrap = "1"
 		def expected = builder.bind{
 			"xnat:scan" ("xsi:type":"xnat:mrQcScanData") {
+				"xnat:imageScan_ID" null 
 				"xnat:pass" null
 				"xnat:wrap" "1"
 			}
@@ -129,6 +143,7 @@ public class MrScanAssessmentTest extends ModelXmlTestCase {
 		scan.susceptibility = "1"
 		def expected = builder.bind{
 			"xnat:scan" ("xsi:type":"xnat:mrQcScanData") {
+				"xnat:imageScan_ID" null 
 				"xnat:pass" null
 				"xnat:susceptibility" "1"
 			}
@@ -140,6 +155,7 @@ public class MrScanAssessmentTest extends ModelXmlTestCase {
 		scan.interpacMotion = "1"
 		def expected = builder.bind{
 			"xnat:scan" ("xsi:type":"xnat:mrQcScanData") {
+				"xnat:imageScan_ID" null 
 				"xnat:pass" null
 				"xnat:interpacMotion" "1"
 			}

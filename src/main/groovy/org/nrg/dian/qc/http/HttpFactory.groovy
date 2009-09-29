@@ -10,6 +10,6 @@ class HttpFactory {
 	def connect(){
 		HTTPBuilder http = new HTTPBuilder(baseUrl)
 		http.auth.basic(username, password)
-		return new HttpResource(httpClient: http)
+		return http
 	}
 }

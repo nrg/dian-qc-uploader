@@ -11,55 +11,24 @@ class DataMapperTest extends GroovyTestCase {
 		mapper = new DataMapper()
 	}
 	
-	void testUniqueIdSingleRecord(){
-		def records = [record("56", "20091025", "1")]
-		def expected = [["patid":"56", "sdate":"20091025"]] 
-		assertEquals(expected, mapper.uniqueId(records))
-	}
-	
-	void testUniqueIdMutipleIdsSingleRecords(){
-		def records = [record("56", "20091025", "1"),
-		record("56", "20091026", "1")]
-		def expected = [["patid":"56", "sdate":"20091025"], ["patid":"56", "sdate":"20091026"]] 
-		assertEquals(expected, mapper.uniqueId(records))
-	}
-	
-	
-	void testUniqueIdSingleIdMultipleRecords(){
-		def records = [record("56", "20091025", "1"),
-		record("56", "20091025", "2")]
-		def expected = [["patid":"56", "sdate":"20091025"]] 
-		assertEquals(expected, mapper.uniqueId(records))
-	}
-	
-	void testUniqueIdMutipleIdsMultipleRecords(){
-		def records = [record("56", "20091025", "1"),
-		record("56", "20091025", "2"),
-		record("700", "20091025", "1"),
-		record("700", "20091025", "13")]
-		def expected = [["patid":"56", "sdate":"20091025"], ["patid":"700", "sdate":"20091025"]] 
-		assertEquals(expected, mapper.uniqueId(records))
-	}
-	
 	void testFilter(){
-		def records = [record("56", "20091025", "1")]
+		def records = [record("56", "1")]
 		def expected = records
-		assertEquals(expected, mapper.filter(["patid": "56", "sdate": "20091025"], records))
+		assertEquals(expected, mapper.filter("56", records))
 	}
 	
 	void testFilterNotInList(){
-		def records = [record("56", "20091025", "1")]
+		def records = [record("56", "1")]
 		def expected = []
-		assertEquals(expected, mapper.filter(["patid": "700", "sdate": "20091025"], records))
+		assertEquals(expected, mapper.filter("700", records))
 	}
 	
 	void testFilterMultiple(){
-		def records = [record("56", "20091025", "1"),
-		record("700", "20091025", "2"),
-		record("56", "20091025", "3"),
-		record("56", "20091026", "4")]
+		def records = [record("56", "1"),
+                	   record("700", "2"),
+                	   record("56", "3")]
 		def expected = records[0,2]
-		assertEquals(expected, mapper.filter(["patid": "56", "sdate": "20091025"], records))
+		assertEquals(expected, mapper.filter("56", records))
 	}
 	
 	void testScoreRegularValue(){
@@ -82,9 +51,7 @@ class DataMapperTest extends GroovyTestCase {
 		assertNull(mapper.score("-1"))
 	}
 	
-	
-	
-	private def record(patid, sdate, seriesnumber){
-		return ["patid": patid, "sdate": sdate, "seriesnumber": seriesnumber]
+	private def record(patientid, seriesnumber){
+		return ["patientid": patientid, "seriesnumber": seriesnumber]
 	}
 }

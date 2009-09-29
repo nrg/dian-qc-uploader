@@ -1,6 +1,7 @@
 package org.nrg.dian.qc.model;
 
 import org.nrg.dian.qc.model.SessionAssessment;
+import org.nrg.dian.qc.util.DateUtil;
 
 class SessionAssessmentTest extends ModelXmlTestCase {
 	SessionAssessment session
@@ -18,6 +19,7 @@ class SessionAssessmentTest extends ModelXmlTestCase {
 			"xmlns:xnat":"http://nrg.wustl.edu/xnat",
 			"xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance", 
 			"xsi:schemaLocation":"http://nrg.wustl.edu/xnat plugin-resources/project-skeletons/xnat/src/schemas/xnat/xnat.xsd"){ 
+				"xnat:imageSession_ID" null
 				"xnat:scans" {}
 				"xnat:pass" null
 			}
@@ -27,6 +29,8 @@ class SessionAssessmentTest extends ModelXmlTestCase {
 	
 	void testToXmlWithProperties(){
 		session.project = "Demo"
+		session.date = DateUtil.secondsToDate(1237926736)
+		session.session_id = "ABC1234"
 		session.id = "test_135"
 		session.rater = "Jane Doe"
 		session.stereotacticMarker = "0"
@@ -41,8 +45,11 @@ class SessionAssessmentTest extends ModelXmlTestCase {
 			"xmlns:prov":"http://www.nbirn.net/prov", 
 			"xmlns:xnat":"http://nrg.wustl.edu/xnat",
 			"xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance", 
-			"xsi:schemaLocation":"http://nrg.wustl.edu/xnat plugin-resources/project-skeletons/xnat/src/schemas/xnat/xnat.xsd"){ 
+			"xsi:schemaLocation":"http://nrg.wustl.edu/xnat plugin-resources/project-skeletons/xnat/src/schemas/xnat/xnat.xsd"){
+				"xnat:imageSession_ID" "ABC1234"
 				"xnat:rater" "Jane Doe"
+				"xnat:date" "2009-03-24"
+				"xnat:time" "15:32:16"
 				"xnat:stereotacticMarker" "0"
 				"xnat:incidentalFindings" "There were several lesions\ntest\n"
 				"xnat:scans" {}
@@ -64,6 +71,7 @@ class SessionAssessmentTest extends ModelXmlTestCase {
 			"xmlns:xnat":"http://nrg.wustl.edu/xnat",
 			"xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance", 
 			"xsi:schemaLocation":"http://nrg.wustl.edu/xnat plugin-resources/project-skeletons/xnat/src/schemas/xnat/xnat.xsd"){ 
+				"xnat:imageSession_ID" null
 				"xnat:scans" {
 					"xnat:scan" ("xsi:type": "xnat:mrQcScanData") {
 						"xnat:imageScan_ID" "ab1"
@@ -88,6 +96,7 @@ class SessionAssessmentTest extends ModelXmlTestCase {
 			"xmlns:xnat":"http://nrg.wustl.edu/xnat",
 			"xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance", 
 			"xsi:schemaLocation":"http://nrg.wustl.edu/xnat plugin-resources/project-skeletons/xnat/src/schemas/xnat/xnat.xsd"){ 
+				"xnat:imageSession_ID" null
 				"xnat:scans" {
 					"xnat:scan" ("xsi:type": "xnat:mrQcScanData") {
 						"xnat:imageScan_ID" "ab1"
