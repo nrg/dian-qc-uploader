@@ -4,17 +4,19 @@ import org.springframework.context.ApplicationContext;
 import org.nrg.dian.qc.cli.CommandLine;
 import org.nrg.dian.qc.csv.CsvParser;
 import org.nrg.dian.qc.csv.DataMapper;
-import org.nrg.dian.qc.http.HttpFactory;
+import org.nrg.dian.qc.http.HttpClient;
 
 class UploadController {
 	private static ApplicationContext SPRING_CONTEXT
 	
 	def run(options){
+		HttpClient http = getHttpClient(options)
 		def assessments = map(options.qualityfile, options.inclusionfile)
 		assessments.each { assessment ->
-			assessment.project = options.projectid
+			//get project id
+			http.get()
+			//assessment.project = options.projectid
 			println assessment.toXml()
-			//			HttpClient http = getHttpClient(options)
 			//			http.post(path, assessment.toXml())
 		}
 	}

@@ -104,23 +104,17 @@
 				</executions>
 			</plugin>
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-jar-plugin</artifactId>
+				<artifactId>maven-assembly-plugin</artifactId>
 				<configuration>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
 					<archive>
 						<manifest>
 							<addClasspath>true</addClasspath>
 							<mainClass>org.nrg.dian.qc.controller.UploadController</mainClass>
 						</manifest>
 					</archive>
-				</configuration>
-			</plugin>
-			<plugin>
-				<artifactId>maven-assembly-plugin</artifactId>
-				<configuration>
-					<descriptorRefs>
-						<descriptorRef>jar-with-dependencies</descriptorRef>
-					</descriptorRefs>
 				</configuration>
 			</plugin>
 

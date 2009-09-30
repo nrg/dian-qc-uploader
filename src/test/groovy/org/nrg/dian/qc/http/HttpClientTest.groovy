@@ -11,7 +11,8 @@ class HttpClientTest extends GroovyTestCase {
 	def resource
 	
 	void setUp(){
-		http = [:]
+		http = new Expando()
+		
 		resource = new HttpClient(httpFactory: ["connect": { http }])
 	}
 	
@@ -71,5 +72,6 @@ class HttpClientTest extends GroovyTestCase {
 		}
 		
 		def response = resource.get(SAMPLE_PATH)
+		assertEquals(200, response.status)
 	}
 }

@@ -5,19 +5,19 @@ import static groovyx.net.http.ContentType.TEXT
 class HttpClient {
 	def httpFactory
 	
-	def delete(String path) {
+	def delete(path) {
 		connect().delete(path: path) { resp -> return resp }
 	}
 
-	def get(String path) {
+	def get(path) {
 		connect().get(path: path) { resp -> return resp }
 	}
 
-	def post(String path, String content) {
+	def post(path, content) {
 		connect().post(path: path, requestContentType: TEXT, body: content) { resp -> return resp }
 	}
 	
-	def put(String path, String content) {
+	def put(path, content) {
 		connect().put(path: path, requestContentType: TEXT, body: content) { resp -> return resp }
 	}
 
