@@ -14,7 +14,7 @@ class CommandLineTest extends GroovyTestCase {
 		                         "-u", "scott", "-p", "tiger",
 		                         "quality.csv", "inclusion.csv"])
 
-		assertEquals("http://cnda.wustl.edu:8000", options.server)
+		assertEquals("http://cnda.wustl.edu:8000/", options.server)
 		assertEquals("scott", options.user)
 		assertEquals("tiger", options.password)
 		assertEquals("quality.csv", options.qualityfile)

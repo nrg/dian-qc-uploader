@@ -27,7 +27,7 @@ class CommandLine {
 			error()
 		}
 		
-		return ["server": options.s, "user": options.u, "password": options.p, 
+		return ["server": options.s + "/", "user": options.u, "password": options.p, 
 		        "qualityfile": extraArguments[0], "inclusionfile": extraArguments[1]]
 	}
 	

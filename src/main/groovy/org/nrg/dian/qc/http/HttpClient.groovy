@@ -3,6 +3,11 @@ package org.nrg.dian.qc.http;
 import static groovyx.net.http.ContentType.TEXT
 import static groovyx.net.http.ContentType.XML
 
+/**
+ * Simple wrapper around HTTPBuilder's RESTClient.  This wrapper allows for easy
+ * mocking of HTTP requests for testing.  The wrapper also presents the content 
+ * types.
+ */
 class HttpClient {
 	def httpFactory
 	

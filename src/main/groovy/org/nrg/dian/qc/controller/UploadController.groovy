@@ -9,6 +9,10 @@ import org.nrg.dian.qc.csv.CsvParser;
 import org.nrg.dian.qc.csv.DataMapper;
 import org.nrg.dian.qc.http.HttpClient;
 
+/** 
+ * Primary entry point in command line program.  Integrates the various pieces 
+ * of the application and controlls the flow of data between those pieces.
+ */
 class UploadController {
 	def static LOGGER = Logger.getLogger(UploadController.class)
 	
