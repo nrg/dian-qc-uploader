@@ -19,18 +19,21 @@ class GetProjectInformation extends GroovyTestCase {
 	
 	void testLookup(){
 		def session_id = "0000202_MR1"
-		def response = http.get("REST/experiments?format=xml&xsiType=xnat:mrSessionData&project=DIAN_*&label=${session_id}&columns=ID,subject_ID,label,project,date")
-		println response.data.results
+		def response = http.get("REST/experiments", 
+								[format: "xml", xsiType: "xnat:mrSessionData", 
+								 project:"DIAN_*", label:session_id, 
+								 column:"ID,subject_ID,label,project,date"])
+		println response.data.results.rows.row.cell[0]
 	}
 	
-//	void testGoogle(){
-//		def http = new HTTPBuilder('http://localhost:8380/cnda_xnat/')
-//		http.auth.basic ("admin", "admin")
-//		
-//		def html = http.get( path : 'REST/experiments?format=xml&xsiType=xnat:mrSessionData&project=DIAN_*&label=${session_id}&columns=ID,subject_ID,label,project,date', 
-//				contentType : XML)
-//		println html
-//		
-//	}
+	//	void testGoogle(){
+	//		def http = new HTTPBuilder('http://localhost:8380/cnda_xnat/')
+	//		http.auth.basic ("admin", "admin")
+	//		
+	//		def html = http.get( path : 'REST/experiments?format=xml&xsiType=xnat:mrSessionData&project=DIAN_*&label=${session_id}&columns=ID,subject_ID,label,project,date', 
+	//				contentType : XML)
+	//		println html
+	//		
+	//	}
 	
 }

@@ -20,7 +20,10 @@ class ProjectDirectory {
 	}
 	
 	def query(session_id){
-		def response = http.get("REST/experiments?format=xml&xsiType=xnat:mrSessionData&project=DIAN_*&label=${session_id}&columns=ID,subject_ID,label,project,date")
+		def response = http.get("REST/experiments", 
+                				[format: "xml", xsiType: "xnat:mrSessionData", 
+                				 project:"DIAN_*", label:session_id, 
+                				 column:"ID,subject_ID,label,project,date"])
 		assert response.status == 200
 		return response.data
 	}

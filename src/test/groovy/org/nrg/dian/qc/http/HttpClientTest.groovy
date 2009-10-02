@@ -70,5 +70,17 @@ class HttpClientTest extends GroovyTestCase {
 		def response = client.get(SAMPLE_PATH)
 		assertEquals("hello world", response.data)
 		assertEquals(200, response.status)
+	}	
+	
+	void testGetQueryParams(){
+		http.get = { 
+			assertEquals(SAMPLE_PATH, it.path)
+			assertEquals(["name": "doe"], it.query)
+			return ["status": 200, "data":"hello world"]
+		}
+		
+		def response = client.get(SAMPLE_PATH, [name: "doe"])
+		assertEquals("hello world", response.data)
+		assertEquals(200, response.status)
 	}
 }

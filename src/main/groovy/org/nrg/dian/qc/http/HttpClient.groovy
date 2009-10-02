@@ -10,8 +10,8 @@ class HttpClient {
 		return connect().delete(path: path)
 	}
 	
-	def get(path) {
-		return connect().get(path: path, contentType : XML)
+	def get(path, query=null) {
+		return connect().get(path: path, contentType : XML, query: query)
 	}
 	
 	def post(path, content) {

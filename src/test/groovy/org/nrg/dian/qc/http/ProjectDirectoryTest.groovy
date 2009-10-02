@@ -41,7 +41,7 @@ class ProjectDirectoryTest extends GroovyTestCase {
 	}
 	
 	void testAddProjectDetails(){
-		http.get = { 
+		http.get = { path, query ->
 			return ["status": 200, "data": toXml(SAMPLE_XML)]
 		}
 		
@@ -54,8 +54,12 @@ class ProjectDirectoryTest extends GroovyTestCase {
 	}
 	
 	void testQuery(){
-		http.get = { path ->
-			assertEquals("REST/experiments?format=xml&xsiType=xnat:mrSessionData&project=DIAN_*&label=ABC&columns=ID,subject_ID,label,project,date", path)
+		http.get = { path, query ->
+			assertEquals("REST/experiments", path)
+			def expectedQuery = [format: "xml", xsiType: "xnat:mrSessionData", 
+            					 project:"DIAN_*", label:"ABC", 
+            					 column:"ID,subject_ID,label,project,date"]
+			assertEquals(expectedQuery, query)
 			return ["status": 200, "data": toXml(SAMPLE_XML)]
 		}
 		

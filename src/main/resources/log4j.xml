@@ -16,23 +16,23 @@
 	<!-- Use DEBUG to see basic request/response info;  
 	     Use TRACE to see headers for HttpURLClient. -->
 	<category name="groovyx.net.http.HttpURLClient">
-		<priority value="TRACE" />
+		<priority value="DEBUG" />
 	</category>
 
 	<category name="org.apache.http">
 		<priority value="INFO" />
 	</category>
 	<category name="org.apache.http.headers">
-		<priority value="DEBUG" />
+		<priority value="INFO" />
 	</category>
 	<category name="org.apache.http.wire">
-		<priority value="DEBUG" />
+		<priority value="INFO" />
 	</category>
 	<category name="org.xnat.dian.qc">
 		<priority value="DEBUG" />
 	</category>
 	<root>
-		<priority value="INFO" />
+		<priority value="DEBUG" />
 		<appender-ref ref="console" />
 	</root>
 </log4j:configuration>
