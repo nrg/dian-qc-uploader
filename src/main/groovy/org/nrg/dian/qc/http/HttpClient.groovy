@@ -1,26 +1,27 @@
 package org.nrg.dian.qc.http;
 
 import static groovyx.net.http.ContentType.TEXT
+import static groovyx.net.http.ContentType.XML
 
 class HttpClient {
 	def httpFactory
 	
 	def delete(path) {
-		connect().delete(path: path) { resp -> return resp }
+		return connect().delete(path: path)
 	}
-
+	
 	def get(path) {
-		connect().get(path: path) { resp -> return resp }
+		return connect().get(path: path, contentType : XML)
 	}
-
+	
 	def post(path, content) {
-		connect().post(path: path, requestContentType: TEXT, body: content) { resp -> return resp }
+		return connect().post(path: path, requestContentType: TEXT, body: content)
 	}
 	
 	def put(path, content) {
-		connect().put(path: path, requestContentType: TEXT, body: content) { resp -> return resp }
+		return connect().put(path: path, requestContentType: TEXT, body: content)
 	}
-
+	
 	private def connect() {
 		return httpFactory.connect()
 	}

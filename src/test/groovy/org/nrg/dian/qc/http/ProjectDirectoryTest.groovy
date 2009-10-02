@@ -1,8 +1,10 @@
 package org.nrg.dian.qc.http;
 
+import org.nrg.dian.qc.model.SessionAssessment;
+
 import groovy.util.GroovyTestCase;
 
-class ProjectLookupTest extends GroovyTestCase {
+class ProjectDirectoryTest extends GroovyTestCase {
 	private static final String SAMPLE_XML = """
 		<ResultSet totalRecords="1" title="Matching experiments">
 			<results>
@@ -30,34 +32,49 @@ class ProjectLookupTest extends GroovyTestCase {
 		</ResultSet>
 		""" 
 	
-	ProjectLookup lookup
+	ProjectDirectory directory
 	def http
 	
 	void setUp() throws Exception {
 		http = new Expando()
-		lookup = new ProjectLookup([http: http])
+		directory = new ProjectDirectory([http: http])
+	}
+	
+	void testAddProjectDetails(){
+		http.get = { 
+			return ["status": 200, "data": toXml(SAMPLE_XML)]
+		}
+		
+		SessionAssessment session = new SessionAssessment(["session_id": "0003814_MR1"]);
+		directory.addProjectDetails(session)
+		
+		assertEquals("DIAN_941", session.project)
+		assertEquals("CNDA_E01861", session.system_session_id)
+		assertEquals("CNDA_S00515", session.subject_id)		
 	}
 	
 	void testQuery(){
 		http.get = { path ->
 			assertEquals("REST/experiments?format=xml&xsiType=xnat:mrSessionData&project=DIAN_*&label=ABC&columns=ID,subject_ID,label,project,date", path)
-			return ["status": 200, "content": "<ResultSet></ResultSet>"]
+			return ["status": 200, "data": toXml(SAMPLE_XML)]
 		}
 		
-		def response = lookup.query("ABC")
-		assertEquals("<ResultSet></ResultSet>", response)
+		def response = directory.query("ABC")
+		assertEquals(toXml(SAMPLE_XML), response)
 	}
 	
-	void testQueryHttpError(){
+	
+	void testQueryError(){
 		http.get = { path ->
-			return ["status": 500, "content": "<ResultSet></ResultSet>"]
+			assertEquals("REST/experiments?format=xml&xsiType=xnat:mrSessionData&project=DIAN_*&label=ABC&columns=ID,subject_ID,label,project,date", path)
+			return ["status": 404, "data": toXml("<ResultSet></ResultSet>")]
 		}
 		
-		shouldFail { lookup.query("ABC") }
+		shouldFail { directory.query("ABC") }
 	}
 	
-	void testParse(){
-		def result = lookup.parse(SAMPLE_XML)
+	void testTranslate(){
+		def result = directory.translate(toXml(SAMPLE_XML))
 		
 		def expected = ["xnat:mrsessiondata/id": "CNDA_E01861", "subject_ID":"CNDA_S00515", 
 				"ID":"CNDA_E01861", "label":"0003814_MR1", "project":"DIAN_941", 
@@ -77,8 +94,10 @@ class ProjectLookupTest extends GroovyTestCase {
     	</results></ResultSet>
 		"""
 		
-		shouldFail { lookup.parse(xml) }
+		shouldFail { directory.translate(toXml(xml)) }
 	}
 	
-	
+	def toXml(data){
+		return new XmlSlurper().parseText(data)
+	}
 }

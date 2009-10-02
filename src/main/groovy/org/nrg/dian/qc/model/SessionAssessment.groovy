@@ -13,10 +13,11 @@ class SessionAssessment {
 	static final String PASS = "1"
 	static final String FAIL = "0"
 	
-	def id
-	Date date
 	def project
+	def subject_id
+	def system_session_id
 	def session_id
+	Date date
 	def rater
 	def stereotacticMarker
 	def incidentalFindings
@@ -25,11 +26,22 @@ class SessionAssessment {
 	def payable
 	
 	List<MrScanAssessment> scans = [];
+
+	def makeId(){
+		if (session_id) {
+			def timestamp = ""
+    		if (date){
+    			timestamp = DateUtil.dateFormat(date)
+    		}
+			return "${session_id}_mQC_${timestamp}"
+		}
+		return null
+	}
 	
 	String toXml() {
 		def xml = new StreamingMarkupBuilder().bind{
 			mkp.xmlDeclaration()
-			"xnat:QCManualAssessment" ("ID":id, "project":project, 
+			"xnat:QCManualAssessment" ("ID":makeId(), "project":project, 
 			"xmlns:prov":"http://www.nbirn.net/prov", 
 			"xmlns:xnat":"http://nrg.wustl.edu/xnat",
 			"xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance", 

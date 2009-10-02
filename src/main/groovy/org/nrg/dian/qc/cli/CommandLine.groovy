@@ -10,7 +10,7 @@ class CommandLine {
 		
 		cli.with {
 			h longOpt: 'help', 'Show usage information'
-			s longOpt: 'server', args: 1, argName: 'server', required: true, 'XNAT server URL, including protocol and port (if necessary)'
+			s longOpt: 'server', args: 1, argName: 'server', required: true, 'XNAT server URL, including protocol, port, and XNAT path (if necessary)'
 			u longOpt: 'user', args: 1, argName: 'user', required: true, 'XNAT username'
 			p longOpt: 'password', args: 1, argName: 'password', required: true, 'XNAT password'
 		}

@@ -1,6 +1,7 @@
 package org.nrg.dian.qc.http;
 
 import groovyx.net.http.HTTPBuilder;
+import groovyx.net.http.RESTClient;
 
 class HttpFactory {
 	String baseUrl
@@ -8,7 +9,7 @@ class HttpFactory {
 	String password
 	
 	def connect(){
-		HTTPBuilder http = new HTTPBuilder(baseUrl)
+		RESTClient http = new RESTClient(baseUrl)
 		http.auth.basic(username, password)
 		return http
 	}

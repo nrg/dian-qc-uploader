@@ -31,7 +31,6 @@ class SessionAssessmentTest extends ModelXmlTestCase {
 		session.project = "Demo"
 		session.date = DateUtil.secondsToDate(1237926736)
 		session.session_id = "ABC1234"
-		session.id = "test_135"
 		session.rater = "Jane Doe"
 		session.stereotacticMarker = "0"
 		session.incidentalFindings = "There were several lesions\ntest\n"
@@ -41,7 +40,7 @@ class SessionAssessmentTest extends ModelXmlTestCase {
 		
 		def expected = builder.bind{
 			mkp.xmlDeclaration()
-			"xnat:QCManualAssessment" ("ID":"test_135", "project":"Demo", 
+			"xnat:QCManualAssessment" ("ID":"ABC1234_mQC_2009-03-24", "project":"Demo", 
 			"xmlns:prov":"http://www.nbirn.net/prov", 
 			"xmlns:xnat":"http://nrg.wustl.edu/xnat",
 			"xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance", 
@@ -112,5 +111,11 @@ class SessionAssessmentTest extends ModelXmlTestCase {
 			}
 		}
 		assertExpectedXml(expected, session)
+	}
+
+	void testMakeId(){
+		session.session_id = "ABC_1234"
+		session.date = DateUtil.secondsToDate(1237926736)
+		assertEquals("ABC_1234_mQC_2009-03-24", session.makeId())
 	}
 }

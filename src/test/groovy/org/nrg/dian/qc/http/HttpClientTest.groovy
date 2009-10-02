@@ -8,70 +8,67 @@ class HttpClientTest extends GroovyTestCase {
 	private static final String SAMPLE_DOCUMENT = "<doc>hello</doc>"
 	
 	def http
-	def resource
+	def client
 	
 	void setUp(){
 		http = new Expando()
 		
-		resource = new HttpClient(httpFactory: ["connect": { http }])
+		client = new HttpClient(httpFactory: ["connect": { http }])
 	}
 	
 	void testPost(){
-		http.post = { x, y ->
-			assertEquals(SAMPLE_PATH, x.path)
-			assertEquals(SAMPLE_DOCUMENT, x.body)
-			assertEquals("text/plain", x.requestContentType.toString())
+		http.post = { 
+			assertEquals(SAMPLE_PATH, it.path)
+			assertEquals(SAMPLE_DOCUMENT, it.body)
+			assertEquals("text/plain", it.requestContentType.toString())
 		}
 		
-		def response = resource.post(SAMPLE_PATH, SAMPLE_DOCUMENT)
+		client.post(SAMPLE_PATH, SAMPLE_DOCUMENT)
 	}	
 	
 	void testPostSuccess(){
-		http.post = { x, y ->
-			y(['status': 200])
-		}
+		http.post = { return ['status': 200] }
 		
-		def response = resource.post(SAMPLE_PATH, SAMPLE_DOCUMENT)
+		def response = client.post(SAMPLE_PATH, SAMPLE_DOCUMENT)
 		assertEquals(200, response.status)
 	}
 	
 	void testPostFailure(){
-		http.post = { x, y ->
-			y(['status': 404])
-		}
+		http.post = { return ['status': 404] }
 		
-		def response = resource.post(SAMPLE_PATH, SAMPLE_DOCUMENT)
+		def response = client.post(SAMPLE_PATH, SAMPLE_DOCUMENT)
 		assertEquals(404, response.status)
 	}
 	
 	void testPut(){
-		http.put = { x, y ->
-			assertEquals(SAMPLE_PATH, x.path)
-			assertEquals(SAMPLE_DOCUMENT, x.body)
-			assertEquals("text/plain", x.requestContentType.toString())
+		http.put = { 
+			assertEquals(SAMPLE_PATH, it.path)
+			assertEquals(SAMPLE_DOCUMENT, it.body)
+			assertEquals("text/plain", it.requestContentType.toString())
 		}
 		
-		def response = resource.put(SAMPLE_PATH, SAMPLE_DOCUMENT)
+		client.put(SAMPLE_PATH, SAMPLE_DOCUMENT)
 	}	
 	
 	void testDelete(){
-		http.delete = { x, y ->
-			assertEquals(SAMPLE_PATH, x.path)
-			y(['status': 200])
+		http.delete = { 
+			assertEquals(SAMPLE_PATH, it.path)
+			return ['status': 200]
 		}
 		
-		def response = resource.delete(SAMPLE_PATH)
+		def response = client.delete(SAMPLE_PATH)
 		assertEquals(200, response.status)
 	}
 	
 	
 	void testGet(){
-		http.get = { x, y ->
+		http.get = { x ->
 			assertEquals(SAMPLE_PATH, x.path)
-			y(['status': 200])
+			return ["status": 200, "data":"hello world"]
 		}
 		
-		def response = resource.get(SAMPLE_PATH)
+		def response = client.get(SAMPLE_PATH)
+		assertEquals("hello world", response.data)
 		assertEquals(200, response.status)
 	}
 }
