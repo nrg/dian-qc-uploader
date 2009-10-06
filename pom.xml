@@ -11,7 +11,7 @@
 
 	<packaging>jar</packaging>
 
-	<url>http://www.xnat.org</url>
+	<url>http://johnpaulett.github.com/dian-qc-uploader/</url>
 	<developers>
 		<developer>
 			<name>John Paulett</name>
@@ -30,9 +30,9 @@
 	</issueManagement>
 
 	<scm>
-		<connection>scm:git:git://github.com/johnpaulett/dian-qc-upload.git</connection>
-		<developerConnection>scm:git:git://github.com/johnpaulett/dian-qc-upload.git</developerConnection>
-		<url>http://github.com/johnpaulett/dian-qc-upload</url>
+		<connection>scm:git:git://github.com/johnpaulett/dian-qc-uploader.git</connection>
+		<developerConnection>scm:git:git://github.com/johnpaulett/dian-qc-uploader.git</developerConnection>
+		<url>http://github.com/johnpaulett/dian-qc-uploader</url>
 	</scm>
 
 	<distributionManagement>
@@ -42,6 +42,11 @@
 			<url>file:${project.basedir}/../${project.artifactId}-site</url>
 		</site>
 	</distributionManagement>
+
+	<ciManagement>
+		<system>hudson</system>
+		<url>http://nrg.wustl.edu/hudson/job/dian-qc-uploader/</url>
+	</ciManagement>
 
 	<mailingLists>
 		<mailingList>
@@ -68,8 +73,14 @@
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>2.6</version>
+				<artifactId>maven-changes-plugin</artifactId>
+				<reportSets>
+					<reportSet>
+						<reports>
+							<report>changes-report</report>
+						</reports>
+					</reportSet>
+				</reportSets>
 			</plugin>
 		</plugins>
 	</reporting>

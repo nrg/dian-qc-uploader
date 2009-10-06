@@ -1,0 +1,15 @@
+<document>
+	<properties>
+		<title>Changes to dian-qc-uploader</title>
+		<author>John Paulett</author>
+	</properties>
+	<body>
+		<release version="0.1" date="2009-10-06" description="Initial release">
+			<action dev="jpaulett" type="add">
+				Initial release. Includes ability
+				to map CSV QC files into XML and upload
+				that XML into an XNAT server.
+			</action>
+		</release>
+	</body>
+</document>
