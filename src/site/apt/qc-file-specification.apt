@@ -1,5 +1,6 @@
   The DIAN Quality Control Uploader requires that certain fields exist in the specific
-  files.
+  files. The tool maps the data in these files into the xnat:qcManualAssessor 
+  element of {{{https://cnda.wustl.edu/schemas/xnat/xnat.xsd}xnat.xsd}}. 
 
 Inclusion File
 
@@ -8,43 +9,43 @@ Inclusion File
 
 * Required Columns
 
-*----------------+
-| <<CSV Column>> |
-*----------------+
-| patientid      | 
-*----------------+
-| timestamp      |
-*----------------+
-| initials       |
-*----------------+
-| surgery        |
-*----------------+
-| hemmorhage     |
-*----------------+
-| dev_anomaly    |
-*----------------+
-| lesion         |
-*----------------+
-| atrophy        |
-*----------------+
-| infarction     |
-*----------------+
-| trauma         |
-*----------------+
-| metallic       |
-*----------------+
-| nph            |
-*----------------+
-| edema          |
-*----------------+
-| other          |
-*----------------+
-| pass           |
-*----------------+
-| pay_site       |
-*----------------+
-| comments       |
-*----------------+
+*----------------+-------------------------------------------------------------+
+| <<CSV Column>> | <<xnat.xsd Mapping>>                                        |
+*----------------+-------------------------------------------------------------+
+| patientid      | <<<qcManualAssessorData/imageSession_ID>>>                  |
+*----------------+-------------------------------------------------------------+
+| timestamp      | <<<qcManualAssessorData/date>>> and <<<qcManualAssessorData/time>>> |
+*----------------+-------------------------------------------------------------+
+| initials       | <<<qcManualAssessorData/rater>>>                            |
+*----------------+-------------------------------------------------------------+
+| surgery        | Appended into <<<qcManualAssessorData/incidentalFindings>>> |
+*----------------+-------------------------------------------------------------+
+| hemmorhage     | Appended into <<<qcManualAssessorData/incidentalFindings>>> |
+*----------------+-------------------------------------------------------------+
+| dev_anomaly    | Appended into <<<qcManualAssessorData/incidentalFindings>>> |
+*----------------+-------------------------------------------------------------+
+| lesion         | Appended into <<<qcManualAssessorData/incidentalFindings>>> |
+*----------------+-------------------------------------------------------------+
+| atrophy        | Appended into <<<qcManualAssessorData/incidentalFindings>>> |
+*----------------+-------------------------------------------------------------+
+| infarction     | Appended into <<<qcManualAssessorData/incidentalFindings>>> |
+*----------------+-------------------------------------------------------------+
+| trauma         | Appended into <<<qcManualAssessorData/incidentalFindings>>> |
+*----------------+-------------------------------------------------------------+
+| metallic       | Appended into <<<qcManualAssessorData/incidentalFindings>>> |
+*----------------+-------------------------------------------------------------+
+| nph            | Appended into <<<qcManualAssessorData/incidentalFindings>>> |
+*----------------+-------------------------------------------------------------+
+| edema          | Appended into <<<qcManualAssessorData/incidentalFindings>>> |
+*----------------+-------------------------------------------------------------+
+| other          | Appended into <<<qcManualAssessorData/incidentalFindings>>> |
+*----------------+-------------------------------------------------------------+
+| pass           | <<<qcManualAssessorData/pass>>>                             |
+*----------------+-------------------------------------------------------------+
+| pay_site       | <<<qcManualAssessorData/payable>>>                          |
+*----------------+-------------------------------------------------------------+
+| comments       | <<<qcManualAssessorData/comments>>>                         |
+*----------------+-------------------------------------------------------------+
 
 * Sample File
 
@@ -61,41 +62,35 @@ Quality File
 
 * Required Columns
 
-*----------------+
-| <<CSV Column>> |
-*----------------+  
-| patientid      |
-*----------------+
-| seriesnumber   |
-*----------------+
-| timestamp      |
-*----------------+
-| initials       |
-*----------------+
-| in_bgr         |
-*----------------+
-| in_flow        |
-*----------------+
-| in_other       |
-*----------------+
-| wrap           |
-*----------------+
-| headcoverage   |
-*----------------+
-| inhomogeneity  |
-*----------------+
-| ip_motion      |
-*----------------+
-| marker         |
-*----------------+
-| pass           |
-*----------------+
-| comments       |
-*----------------+
-| susceptibility |
-*----------------+
-| head_motion    |
-*----------------+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																					
+*----------------+-------------------------------------------------------------+
+| <<CSV Column>> | <<xnat.xsd Mapping>>                                        |    
+*----------------+-------------------------------------------------------------+
+| seriesnumber   | <<<mrQcScanData/imageScan_ID>>>                             |
+*----------------+-------------------------------------------------------------+
+| in_bgr         | <<<mrQcScanData/blurring>>>                                 |
+*----------------+-------------------------------------------------------------+
+| in_flow        | <<<mrQcScanData/flow>>>                                     |
+*----------------+-------------------------------------------------------------+
+| in_other       | <<<mrQcScanData/otherImageArtifacts>>>                      |
+*----------------+-------------------------------------------------------------+
+| wrap           | <<<mrQcScanData/wrap>>>                                     |
+*----------------+-------------------------------------------------------------+
+| headcoverage   | <<<mrQcScanData/coverage>>>                                 |
+*----------------+-------------------------------------------------------------+
+| inhomogeneity  | <<<mrQcScanData/inhomogeneity>>>                            |
+*----------------+-------------------------------------------------------------+
+| ip_motion      | <<<mrQcScanData/interpacMotion>>>                           |
+*----------------+-------------------------------------------------------------+
+| marker         | Merged into <<<qcManualAssessorData/stereotacticMarker>>>   |     
+*----------------+-------------------------------------------------------------+
+| pass           | <<<mrQcScanData/pass>>>                                     |
+*----------------+-------------------------------------------------------------+
+| comments       | <<<mrQcScanData/comments>>>                                 |
+*----------------+-------------------------------------------------------------+
+| susceptibility | <<<mrQcScanData/susceptibility>>>                           |
+*----------------+-------------------------------------------------------------+
+| head_motion    | <<<mrQcScanData/motion>>>                                   |
+*----------------+-------------------------------------------------------------+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																				
 
 * Sample File
 
