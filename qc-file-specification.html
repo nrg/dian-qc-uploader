@@ -1,0 +1,267 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+
+
+
+
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>DIAN Quality Control Uploader - </title>
+    <style type="text/css" media="all">
+      @import url("./css/maven-base.css");
+      @import url("./css/maven-theme.css");
+      @import url("./css/site.css");
+    </style>
+    <link rel="stylesheet" href="./css/print.css" type="text/css" media="print" />
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+      </head>
+  <body class="composite">
+    <div id="banner">
+                    <span id="bannerLeft">
+    
+            DIAN Quality Control Uploader
+    
+            </span>
+                    <div class="clear">
+        <hr/>
+      </div>
+    </div>
+    <div id="breadcrumbs">
+          
+  
+
+  
+    
+  
+  
+    
+            <div class="xleft">
+        Last Published: 2009-10-06
+                      </div>
+            <div class="xright">            <a href="http://xnat.org" class="externalLink">XNAT</a>
+            |
+                <a href="http://nrg.wustl.edu" class="externalLink">NRG</a>
+            
+  
+
+  
+    
+  
+  
+    
+  </div>
+      <div class="clear">
+        <hr/>
+      </div>
+    </div>
+    <div id="leftColumn">
+      <div id="navcolumn">
+           
+  
+
+  
+    
+  
+  
+    
+                   <h5>Overview</h5>
+            <ul>
+              
+    <li class="none">
+                    <a href="index.html">Introduction</a>
+          </li>
+              
+    <li class="none">
+                    <a href="download.html">Download and Install</a>
+          </li>
+              
+    <li class="none">
+                    <a href="release-notes.html">Release Notes</a>
+          </li>
+              
+    <li class="none">
+              <strong>QC File Specification</strong>
+        </li>
+          </ul>
+              <h5>Project Documentation</h5>
+            <ul>
+              
+                
+              
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+              
+        <li class="collapsed">
+                    <a href="project-info.html">Project Information</a>
+                </li>
+              
+                
+              
+      
+              
+        <li class="collapsed">
+                    <a href="project-reports.html">Project Reports</a>
+                </li>
+          </ul>
+                                           <a href="http://maven.apache.org/" title="Built by Maven" class="poweredBy">
+            <img alt="Built by Maven" src="./images/logos/maven-feather.png"></img>
+          </a>
+                       
+  
+
+  
+    
+  
+  
+    
+        </div>
+    </div>
+    <div id="bodyColumn">
+      <div id="contentBox">
+        <p>The DIAN Quality Control Uploader requires that certain fields exist in the specific files.</p>
+<div class="section"><h2>Inclusion File</h2>
+<p>Details whether the participant meets the study criteria and the overall passing and payable status. File contains a single line for each session.</p>
+<div class="section"><h3>Required Columns</h3>
+<table class="bodyTable"><tbody><tr class="a"><td align="left"><b>CSV Column</b>
+</td>
+</tr>
+<tr class="b"><td align="left">patientid</td>
+</tr>
+<tr class="a"><td align="left">timestamp</td>
+</tr>
+<tr class="b"><td align="left">initials</td>
+</tr>
+<tr class="a"><td align="left">surgery</td>
+</tr>
+<tr class="b"><td align="left">hemmorhage</td>
+</tr>
+<tr class="a"><td align="left">dev_anomaly</td>
+</tr>
+<tr class="b"><td align="left">lesion</td>
+</tr>
+<tr class="a"><td align="left">atrophy</td>
+</tr>
+<tr class="b"><td align="left">infarction</td>
+</tr>
+<tr class="a"><td align="left">trauma</td>
+</tr>
+<tr class="b"><td align="left">metallic</td>
+</tr>
+<tr class="a"><td align="left">nph</td>
+</tr>
+<tr class="b"><td align="left">edema</td>
+</tr>
+<tr class="a"><td align="left">other</td>
+</tr>
+<tr class="b"><td align="left">pass</td>
+</tr>
+<tr class="a"><td align="left">pay_site</td>
+</tr>
+<tr class="b"><td align="left">comments</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section"><h3>Sample File</h3>
+<div class="source"><pre>patientid,patientsname,studydate,studytime,magneticfieldstrength,seriesdescription,key_medical,timestamp,fkey_study,initials,nomedical,surgery,hemmorhage,dev_anomaly,lesion,atrophy,infarction,trauma,metallic,nph,edema,other,pass,quarantine,pay_site,comments,rescan,subjectinclusion
+XNAT_00001,20001,20091009,154053.183,3,localizer,102,1237567264,19150,bjb45,1,,,,,,,,,,,,1,1,1,,0,1</pre>
+</div>
+</div>
+</div>
+<div class="section"><h2>Quality File</h2>
+<p>Details about QC on each individual scan. File contains a line for each scan for each session.</p>
+<div class="section"><h3>Required Columns</h3>
+<table class="bodyTable"><tbody><tr class="a"><td align="left"><b>CSV Column</b>
+</td>
+</tr>
+<tr class="b"><td align="left">patientid</td>
+</tr>
+<tr class="a"><td align="left">seriesnumber</td>
+</tr>
+<tr class="b"><td align="left">timestamp</td>
+</tr>
+<tr class="a"><td align="left">initials</td>
+</tr>
+<tr class="b"><td align="left">in_bgr</td>
+</tr>
+<tr class="a"><td align="left">in_flow</td>
+</tr>
+<tr class="b"><td align="left">in_other</td>
+</tr>
+<tr class="a"><td align="left">wrap</td>
+</tr>
+<tr class="b"><td align="left">headcoverage</td>
+</tr>
+<tr class="a"><td align="left">inhomogeneity</td>
+</tr>
+<tr class="b"><td align="left">ip_motion</td>
+</tr>
+<tr class="a"><td align="left">marker</td>
+</tr>
+<tr class="b"><td align="left">pass</td>
+</tr>
+<tr class="a"><td align="left">comments</td>
+</tr>
+<tr class="b"><td align="left">susceptibility</td>
+</tr>
+<tr class="a"><td align="left">head_motion</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section"><h3>Sample File</h3>
+<div class="source"><pre>&quot;patientid&quot;,&quot;patientsname&quot;,&quot;studydate&quot;,&quot;studytime&quot;,&quot;magneticfieldstrength&quot;,&quot;seriesnumber&quot;,&quot;seriesdescription&quot;,&quot;key_qcquality&quot;,&quot;timestamp&quot;,&quot;fkey_series&quot;,&quot;initials&quot;,&quot;in_bgr&quot;,&quot;in_flow&quot;,&quot;in_other&quot;,&quot;wrap&quot;,&quot;headcoverage&quot;,&quot;inhomogeneity&quot;,&quot;ip_motion&quot;,&quot;marker&quot;,&quot;pass&quot;,&quot;comments&quot;,&quot;pp_inhomogeneity&quot;,&quot;susceptibility&quot;,&quot;head_motion&quot;
+&quot;XNAT_00001&quot;,20001,20091009,154053.18,3,2,&quot;localizer&quot;,700,1237967054,123456,&quot;abc123&quot;,0,0,0,0,0,0,-1,2,1,,,-1,-1
+&quot;XNAT_00001&quot;,20001,20091009,154053.18,3,4,&quot;Pha_Images&quot;,701,1237961958,123457,&quot;abc123&quot;,0,0,0,0,0,1,-1,0,1,,,-1,-1</pre>
+</div>
+</div>
+</div>
+
+      </div>
+    </div>
+    <div class="clear">
+      <hr/>
+    </div>
+    <div id="footer">
+      <div class="xright">&#169;  
+          2009
+    
+          Neuroinformatics Research Group
+          
+  
+
+  
+    
+  
+  
+    
+  </div>
+      <div class="clear">
+        <hr/>
+      </div>
+    </div>
+  </body>
+</html>
