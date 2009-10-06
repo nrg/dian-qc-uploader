@@ -4,8 +4,11 @@ Requirements
 
 Download
 
-  The latest dian-qc-uploader can be downloaded from
-  {{http://github.com/johnpaulett/dian-qc-uploader/downloads}}
+  * Download the latest 
+  {{{http://cloud.github.com/downloads/johnpaulett/dian-qc-uploader/dian-qc-uploader.jar}dian-qc-uploader}}
+  (version 0.1)
+  
+  * See previous downloads at {{{http://github.com/johnpaulett/dian-qc-uploader/downloads}github}}
 
 Install
   
