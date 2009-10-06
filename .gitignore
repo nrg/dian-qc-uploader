@@ -1,3 +1,6 @@
 /target/
 *.csv
 *.log
+pom.xml.releaseBackup
+release.properties
+
