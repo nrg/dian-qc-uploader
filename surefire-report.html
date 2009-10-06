@@ -1,0 +1,696 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+
+
+
+
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>DIAN Quality Control Uploader - </title>
+    <style type="text/css" media="all">
+      @import url("./css/maven-base.css");
+      @import url("./css/maven-theme.css");
+      @import url("./css/site.css");
+    </style>
+    <link rel="stylesheet" href="./css/print.css" type="text/css" media="print" />
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+      </head>
+  <body class="composite">
+    <div id="banner">
+                    <span id="bannerLeft">
+    
+            DIAN Quality Control Uploader
+    
+            </span>
+                    <div class="clear">
+        <hr/>
+      </div>
+    </div>
+    <div id="breadcrumbs">
+          
+  
+
+  
+    
+  
+  
+    
+            <div class="xleft">
+        Last Published: 2009-10-06
+                      </div>
+            <div class="xright">            <a href="http://xnat.org" class="externalLink">XNAT</a>
+            |
+                <a href="http://nrg.wustl.edu" class="externalLink">NRG</a>
+            
+  
+
+  
+    
+  
+  
+    
+  </div>
+      <div class="clear">
+        <hr/>
+      </div>
+    </div>
+    <div id="leftColumn">
+      <div id="navcolumn">
+           
+  
+
+  
+    
+  
+  
+    
+                   <h5>Overview</h5>
+            <ul>
+              
+    <li class="none">
+                    <a href="index.html">Introduction</a>
+          </li>
+              
+    <li class="none">
+                    <a href="download.html">Download</a>
+          </li>
+              
+    <li class="none">
+                    <a href="release-notes.html">Release Notes</a>
+          </li>
+              
+    <li class="none">
+                    <a href="qc-file-specification.html">QC File Specification</a>
+          </li>
+          </ul>
+              <h5>Project Documentation</h5>
+            <ul>
+              
+                
+              
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+              
+        <li class="collapsed">
+                    <a href="project-info.html">Project Information</a>
+                </li>
+              
+                
+              
+            
+              
+            <li class="expanded">
+                    <a href="project-reports.html">Project Reports</a>
+                  <ul>
+                  
+    <li class="none">
+              <strong>Maven Surefire Report</strong>
+        </li>
+              </ul>
+        </li>
+          </ul>
+                                           <a href="http://maven.apache.org/" title="Built by Maven" class="poweredBy">
+            <img alt="Built by Maven" src="./images/logos/maven-feather.png"></img>
+          </a>
+                       
+  
+
+  
+    
+  
+  
+    
+        </div>
+    </div>
+    <div id="bodyColumn">
+      <div id="contentBox">
+        <script type="text/javascript">
+function toggleDisplay(elementId) {
+ var elm = document.getElementById(elementId + 'error');
+ if (elm && typeof elm.style != "undefined") {
+ if (elm.style.display == "none") {
+ elm.style.display = "";
+ document.getElementById(elementId + 'off').style.display = "none";
+ document.getElementById(elementId + 'on').style.display = "inline";
+ } else if (elm.style.display == "") { elm.style.display = "none";
+ document.getElementById(elementId + 'off').style.display = "inline";
+ document.getElementById(elementId + 'on').style.display = "none";
+ } 
+ } 
+ }
+</script><h2><a name="Summary"></a>
+Summary</h2>
+<div class="section">[<a href="#Summary">Summary</a>
+][<a href="#Package_List">Package List</a>
+][<a href="#Test_Cases">Test Cases</a>
+]</div>
+<table class="bodyTable"><tr class="a"></tr>
+<tr class="b"></tr>
+</table>
+<table class="bodyTable"><tr class="a"><th>Tests</th>
+<th>Errors </th>
+<th>Failures</th>
+<th>Skipped</th>
+<th>Success Rate</th>
+<th>Time</th>
+</tr>
+<tr class="b"><td>50</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+<td>5.177</td>
+</tr>
+</table>
+<br />
+Note: failures are anticipated and checked for with assertions while errors are unanticipated.<table class="bodyTable"><tr class="a"></tr>
+<tr class="b"></tr>
+</table>
+<h2><a name="Package_List"></a>
+Package List</h2>
+<div class="section">[<a href="#Summary">Summary</a>
+][<a href="#Package_List">Package List</a>
+][<a href="#Test_Cases">Test Cases</a>
+]</div>
+<table class="bodyTable"><tr class="a"></tr>
+<tr class="b"></tr>
+</table>
+<table class="bodyTable"><tr class="a"><th>Package</th>
+<th>Tests</th>
+<th>Errors </th>
+<th>Failures</th>
+<th>Skipped</th>
+<th>Success Rate</th>
+<th>Time</th>
+</tr>
+<tr class="b"><td><a href="#org.nrg.dian.qc.cli">org.nrg.dian.qc.cli</a>
+</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+<td>0.112</td>
+</tr>
+<tr class="a"><td><a href="#org.nrg.dian.qc.csv">org.nrg.dian.qc.csv</a>
+</td>
+<td>14</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+<td>0.053</td>
+</tr>
+<tr class="b"><td><a href="#org.nrg.dian.qc.util">org.nrg.dian.qc.util</a>
+</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+<td>0.004</td>
+</tr>
+<tr class="a"><td><a href="#org.nrg.dian.qc.model">org.nrg.dian.qc.model</a>
+</td>
+<td>19</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+<td>3.263</td>
+</tr>
+<tr class="b"><td><a href="#org.nrg.dian.qc.http">org.nrg.dian.qc.http</a>
+</td>
+<td>14</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+<td>1.745</td>
+</tr>
+</table>
+<br />
+Note: package statistics are not computed recursively, they only sum up all of its testsuites numbers.<h3><a name="org.nrg.dian.qc.cli"></a>
+org.nrg.dian.qc.cli</h3>
+<table class="bodyTable"><tr class="a"><th></th>
+<th>Class</th>
+<th>Tests</th>
+<th>Errors </th>
+<th>Failures</th>
+<th>Skipped</th>
+<th>Success Rate</th>
+<th>Time</th>
+</tr>
+<tr class="b"><td><a href="#org.nrg.dian.qc.cliCommandLineTest"><img src="images/icon_success_sml.gif" /></a>
+</td>
+<td><a href="#org.nrg.dian.qc.cliCommandLineTest">CommandLineTest</a>
+</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+<td>0.112</td>
+</tr>
+</table>
+<h3><a name="org.nrg.dian.qc.csv"></a>
+org.nrg.dian.qc.csv</h3>
+<table class="bodyTable"><tr class="a"><th></th>
+<th>Class</th>
+<th>Tests</th>
+<th>Errors </th>
+<th>Failures</th>
+<th>Skipped</th>
+<th>Success Rate</th>
+<th>Time</th>
+</tr>
+<tr class="b"><td><a href="#org.nrg.dian.qc.csvCsvParserTest"><img src="images/icon_success_sml.gif" /></a>
+</td>
+<td><a href="#org.nrg.dian.qc.csvCsvParserTest">CsvParserTest</a>
+</td>
+<td>6</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+<td>0.041</td>
+</tr>
+<tr class="a"><td><a href="#org.nrg.dian.qc.csvDataMapperTest"><img src="images/icon_success_sml.gif" /></a>
+</td>
+<td><a href="#org.nrg.dian.qc.csvDataMapperTest">DataMapperTest</a>
+</td>
+<td>8</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+<td>0.012</td>
+</tr>
+</table>
+<h3><a name="org.nrg.dian.qc.util"></a>
+org.nrg.dian.qc.util</h3>
+<table class="bodyTable"><tr class="b"><th></th>
+<th>Class</th>
+<th>Tests</th>
+<th>Errors </th>
+<th>Failures</th>
+<th>Skipped</th>
+<th>Success Rate</th>
+<th>Time</th>
+</tr>
+<tr class="a"><td><a href="#org.nrg.dian.qc.utilDateUtilTest"><img src="images/icon_success_sml.gif" /></a>
+</td>
+<td><a href="#org.nrg.dian.qc.utilDateUtilTest">DateUtilTest</a>
+</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+<td>0.004</td>
+</tr>
+</table>
+<h3><a name="org.nrg.dian.qc.model"></a>
+org.nrg.dian.qc.model</h3>
+<table class="bodyTable"><tr class="b"><th></th>
+<th>Class</th>
+<th>Tests</th>
+<th>Errors </th>
+<th>Failures</th>
+<th>Skipped</th>
+<th>Success Rate</th>
+<th>Time</th>
+</tr>
+<tr class="a"><td><a href="#org.nrg.dian.qc.modelSessionAssessmentTest"><img src="images/icon_success_sml.gif" /></a>
+</td>
+<td><a href="#org.nrg.dian.qc.modelSessionAssessmentTest">SessionAssessmentTest</a>
+</td>
+<td>5</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+<td>3.174</td>
+</tr>
+<tr class="b"><td><a href="#org.nrg.dian.qc.modelMrScanAssessmentTest"><img src="images/icon_success_sml.gif" /></a>
+</td>
+<td><a href="#org.nrg.dian.qc.modelMrScanAssessmentTest">MrScanAssessmentTest</a>
+</td>
+<td>14</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+<td>0.089</td>
+</tr>
+</table>
+<h3><a name="org.nrg.dian.qc.http"></a>
+org.nrg.dian.qc.http</h3>
+<table class="bodyTable"><tr class="a"><th></th>
+<th>Class</th>
+<th>Tests</th>
+<th>Errors </th>
+<th>Failures</th>
+<th>Skipped</th>
+<th>Success Rate</th>
+<th>Time</th>
+</tr>
+<tr class="b"><td><a href="#org.nrg.dian.qc.httpProjectDirectoryTest"><img src="images/icon_success_sml.gif" /></a>
+</td>
+<td><a href="#org.nrg.dian.qc.httpProjectDirectoryTest">ProjectDirectoryTest</a>
+</td>
+<td>5</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+<td>0.307</td>
+</tr>
+<tr class="a"><td><a href="#org.nrg.dian.qc.httpDocumentUploaderTest"><img src="images/icon_success_sml.gif" /></a>
+</td>
+<td><a href="#org.nrg.dian.qc.httpDocumentUploaderTest">DocumentUploaderTest</a>
+</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+<td>0.805</td>
+</tr>
+<tr class="b"><td><a href="#org.nrg.dian.qc.httpHttpClientTest"><img src="images/icon_success_sml.gif" /></a>
+</td>
+<td><a href="#org.nrg.dian.qc.httpHttpClientTest">HttpClientTest</a>
+</td>
+<td>7</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+<td>0.302</td>
+</tr>
+<tr class="a"><td><a href="#org.nrg.dian.qc.httpHttpFactoryTest"><img src="images/icon_success_sml.gif" /></a>
+</td>
+<td><a href="#org.nrg.dian.qc.httpHttpFactoryTest">HttpFactoryTest</a>
+</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+<td>0.331</td>
+</tr>
+</table>
+<table class="bodyTable"><tr class="b"></tr>
+<tr class="a"></tr>
+</table>
+<h2><a name="Test_Cases"></a>
+Test Cases</h2>
+<div class="section">[<a href="#Summary">Summary</a>
+][<a href="#Package_List">Package List</a>
+][<a href="#Test_Cases">Test Cases</a>
+]</div>
+<h3><a name="org.nrg.dian.qc.modelSessionAssessmentTest"></a>
+SessionAssessmentTest</h3>
+<table class="bodyTable"><tr class="b"><td><img src="images/icon_success_sml.gif" /></td>
+<td>testToXmlEmpty</td>
+<td>1.234</td>
+</tr>
+<tr class="a"><td><img src="images/icon_success_sml.gif" /></td>
+<td>testToXmlWithProperties</td>
+<td>0.135</td>
+</tr>
+<tr class="b"><td><img src="images/icon_success_sml.gif" /></td>
+<td>testToXmlWithScan</td>
+<td>0.026</td>
+</tr>
+<tr class="a"><td><img src="images/icon_success_sml.gif" /></td>
+<td>testToXmlWithMultipleScans</td>
+<td>0.037</td>
+</tr>
+<tr class="b"><td><img src="images/icon_success_sml.gif" /></td>
+<td>testMakeId</td>
+<td>0.001</td>
+</tr>
+</table>
+<h3><a name="org.nrg.dian.qc.httpProjectDirectoryTest"></a>
+ProjectDirectoryTest</h3>
+<table class="bodyTable"><tr class="a"><td><img src="images/icon_success_sml.gif" /></td>
+<td>testAddProjectDetails</td>
+<td>0.279</td>
+</tr>
+<tr class="b"><td><img src="images/icon_success_sml.gif" /></td>
+<td>testQuery</td>
+<td>0.003</td>
+</tr>
+<tr class="a"><td><img src="images/icon_success_sml.gif" /></td>
+<td>testQueryError</td>
+<td>0.002</td>
+</tr>
+<tr class="b"><td><img src="images/icon_success_sml.gif" /></td>
+<td>testTranslate</td>
+<td>0.003</td>
+</tr>
+<tr class="a"><td><img src="images/icon_success_sml.gif" /></td>
+<td>testParseMultipleRows</td>
+<td>0.002</td>
+</tr>
+</table>
+<h3><a name="org.nrg.dian.qc.httpDocumentUploaderTest"></a>
+DocumentUploaderTest</h3>
+<table class="bodyTable"><tr class="b"><td><img src="images/icon_success_sml.gif" /></td>
+<td>testUpload</td>
+<td>0.8</td>
+</tr>
+</table>
+<h3><a name="org.nrg.dian.qc.cliCommandLineTest"></a>
+CommandLineTest</h3>
+<table class="bodyTable"><tr class="a"><td><img src="images/icon_success_sml.gif" /></td>
+<td>testParse</td>
+<td>0.107</td>
+</tr>
+</table>
+<h3><a name="org.nrg.dian.qc.modelMrScanAssessmentTest"></a>
+MrScanAssessmentTest</h3>
+<table class="bodyTable"><tr class="b"><td><img src="images/icon_success_sml.gif" /></td>
+<td>testToXmlEmpty</td>
+<td>0.005</td>
+</tr>
+<tr class="a"><td><img src="images/icon_success_sml.gif" /></td>
+<td>testToXmlOnlyId</td>
+<td>0.008</td>
+</tr>
+<tr class="b"><td><img src="images/icon_success_sml.gif" /></td>
+<td>testToXmlOnlyCoverage</td>
+<td>0.005</td>
+</tr>
+<tr class="a"><td><img src="images/icon_success_sml.gif" /></td>
+<td>testToXmlOnlyMotion</td>
+<td>0.009</td>
+</tr>
+<tr class="b"><td><img src="images/icon_success_sml.gif" /></td>
+<td>testToXmlOnlyOtherImageArtifacts</td>
+<td>0.006</td>
+</tr>
+<tr class="a"><td><img src="images/icon_success_sml.gif" /></td>
+<td>testToXmlOnlyComments</td>
+<td>0.005</td>
+</tr>
+<tr class="b"><td><img src="images/icon_success_sml.gif" /></td>
+<td>testToXmlOnlyPass</td>
+<td>0.004</td>
+</tr>
+<tr class="a"><td><img src="images/icon_success_sml.gif" /></td>
+<td>testToXmlOnlyBlurring</td>
+<td>0.005</td>
+</tr>
+<tr class="b"><td><img src="images/icon_success_sml.gif" /></td>
+<td>testToXmlOnlyFlow</td>
+<td>0.006</td>
+</tr>
+<tr class="a"><td><img src="images/icon_success_sml.gif" /></td>
+<td>testToXmlOnlyImageContrastn</td>
+<td>0.005</td>
+</tr>
+<tr class="b"><td><img src="images/icon_success_sml.gif" /></td>
+<td>testToXmlOnlyWrap</td>
+<td>0.004</td>
+</tr>
+<tr class="a"><td><img src="images/icon_success_sml.gif" /></td>
+<td>testToXmlOnlySusceptibility</td>
+<td>0.008</td>
+</tr>
+<tr class="b"><td><img src="images/icon_success_sml.gif" /></td>
+<td>testToXmlOnlyInterpacMotion</td>
+<td>0.006</td>
+</tr>
+<tr class="a"><td><img src="images/icon_success_sml.gif" /></td>
+<td>testToXmlMultiple</td>
+<td>0.004</td>
+</tr>
+</table>
+<h3><a name="org.nrg.dian.qc.csvCsvParserTest"></a>
+CsvParserTest</h3>
+<table class="bodyTable"><tr class="b"><td><img src="images/icon_success_sml.gif" /></td>
+<td>testEmptyFile</td>
+<td>0.007</td>
+</tr>
+<tr class="a"><td><img src="images/icon_success_sml.gif" /></td>
+<td>testNullReader</td>
+<td>0.001</td>
+</tr>
+<tr class="b"><td><img src="images/icon_success_sml.gif" /></td>
+<td>testNoHeader</td>
+<td>0</td>
+</tr>
+<tr class="a"><td><img src="images/icon_success_sml.gif" /></td>
+<td>testSingleDataRow</td>
+<td>0.004</td>
+</tr>
+<tr class="b"><td><img src="images/icon_success_sml.gif" /></td>
+<td>testMultipleDataRows</td>
+<td>0.005</td>
+</tr>
+<tr class="a"><td><img src="images/icon_success_sml.gif" /></td>
+<td>testFileName</td>
+<td>0.015</td>
+</tr>
+</table>
+<h3><a name="org.nrg.dian.qc.utilDateUtilTest"></a>
+DateUtilTest</h3>
+<table class="bodyTable"><tr class="b"><td><img src="images/icon_success_sml.gif" /></td>
+<td>testSecondsToDateZero</td>
+<td>0</td>
+</tr>
+<tr class="a"><td><img src="images/icon_success_sml.gif" /></td>
+<td>testSecondsToDate</td>
+<td>0</td>
+</tr>
+</table>
+<h3><a name="org.nrg.dian.qc.csvDataMapperTest"></a>
+DataMapperTest</h3>
+<table class="bodyTable"><tr class="b"><td><img src="images/icon_success_sml.gif" /></td>
+<td>testFilter</td>
+<td>0.003</td>
+</tr>
+<tr class="a"><td><img src="images/icon_success_sml.gif" /></td>
+<td>testFilterNotInList</td>
+<td>0</td>
+</tr>
+<tr class="b"><td><img src="images/icon_success_sml.gif" /></td>
+<td>testFilterMultiple</td>
+<td>0</td>
+</tr>
+<tr class="a"><td><img src="images/icon_success_sml.gif" /></td>
+<td>testScoreRegularValue</td>
+<td>0</td>
+</tr>
+<tr class="b"><td><img src="images/icon_success_sml.gif" /></td>
+<td>testScoreRegularValuePadded</td>
+<td>0</td>
+</tr>
+<tr class="a"><td><img src="images/icon_success_sml.gif" /></td>
+<td>testScoreZero</td>
+<td>0</td>
+</tr>
+<tr class="b"><td><img src="images/icon_success_sml.gif" /></td>
+<td>testScoreEmpty</td>
+<td>0</td>
+</tr>
+<tr class="a"><td><img src="images/icon_success_sml.gif" /></td>
+<td>testScoreNegativeOne</td>
+<td>0</td>
+</tr>
+</table>
+<h3><a name="org.nrg.dian.qc.httpHttpClientTest"></a>
+HttpClientTest</h3>
+<table class="bodyTable"><tr class="b"><td><img src="images/icon_success_sml.gif" /></td>
+<td>testPost</td>
+<td>0.268</td>
+</tr>
+<tr class="a"><td><img src="images/icon_success_sml.gif" /></td>
+<td>testPostSuccess</td>
+<td>0.001</td>
+</tr>
+<tr class="b"><td><img src="images/icon_success_sml.gif" /></td>
+<td>testPostFailure</td>
+<td>0.008</td>
+</tr>
+<tr class="a"><td><img src="images/icon_success_sml.gif" /></td>
+<td>testPut</td>
+<td>0.001</td>
+</tr>
+<tr class="b"><td><img src="images/icon_success_sml.gif" /></td>
+<td>testDelete</td>
+<td>0.001</td>
+</tr>
+<tr class="a"><td><img src="images/icon_success_sml.gif" /></td>
+<td>testGet</td>
+<td>0.001</td>
+</tr>
+<tr class="b"><td><img src="images/icon_success_sml.gif" /></td>
+<td>testGetQueryParams</td>
+<td>0.001</td>
+</tr>
+</table>
+<h3><a name="org.nrg.dian.qc.httpHttpFactoryTest"></a>
+HttpFactoryTest</h3>
+<table class="bodyTable"><tr class="a"><td><img src="images/icon_success_sml.gif" /></td>
+<td>testConnect</td>
+<td>0.324</td>
+</tr>
+</table>
+<table class="bodyTable"><tr class="b"></tr>
+<tr class="a"></tr>
+</table>
+<table class="bodyTable"><tr class="b"></tr>
+<tr class="a"></tr>
+</table>
+
+      </div>
+    </div>
+    <div class="clear">
+      <hr/>
+    </div>
+    <div id="footer">
+      <div class="xright">&#169;  
+          2009
+    
+          Neuroinformatics Research Group
+          
+  
+
+  
+    
+  
+  
+    
+  </div>
+      <div class="clear">
+        <hr/>
+      </div>
+    </div>
+  </body>
+</html>
