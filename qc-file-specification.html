@@ -82,10 +82,6 @@
           </li>
               
     <li class="none">
-                    <a href="release-notes.html">Release Notes</a>
-          </li>
-              
-    <li class="none">
               <strong>QC File Specification</strong>
         </li>
           </ul>
@@ -121,6 +117,8 @@
                 
               
       
+            
+      
               
         <li class="collapsed">
                     <a href="project-reports.html">Project Reports</a>
@@ -141,46 +139,84 @@
     </div>
     <div id="bodyColumn">
       <div id="contentBox">
-        <p>The DIAN Quality Control Uploader requires that certain fields exist in the specific files.</p>
+        <p>The DIAN Quality Control Uploader requires that certain fields exist in the specific files. The tool maps the data in these files into the xnat:qcManualAssessor element of <a href="https://cnda.wustl.edu/schemas/xnat/xnat.xsd" class="externalLink">xnat.xsd</a>
+. </p>
 <div class="section"><h2>Inclusion File</h2>
 <p>Details whether the participant meets the study criteria and the overall passing and payable status. File contains a single line for each session.</p>
 <div class="section"><h3>Required Columns</h3>
 <table class="bodyTable"><tbody><tr class="a"><td align="left"><b>CSV Column</b>
 </td>
+<td align="left"><b>xnat.xsd Mapping</b>
+</td>
 </tr>
 <tr class="b"><td align="left">patientid</td>
+<td align="left"><tt>qcManualAssessorData/imageSession_ID</tt>
+</td>
 </tr>
 <tr class="a"><td align="left">timestamp</td>
+<td align="left"><tt>qcManualAssessorData/date</tt>
+ and <tt>qcManualAssessorData/time</tt>
+</td>
 </tr>
 <tr class="b"><td align="left">initials</td>
+<td align="left"><tt>qcManualAssessorData/rater</tt>
+</td>
 </tr>
 <tr class="a"><td align="left">surgery</td>
+<td align="left">Appended into <tt>qcManualAssessorData/incidentalFindings</tt>
+</td>
 </tr>
 <tr class="b"><td align="left">hemmorhage</td>
+<td align="left">Appended into <tt>qcManualAssessorData/incidentalFindings</tt>
+</td>
 </tr>
 <tr class="a"><td align="left">dev_anomaly</td>
+<td align="left">Appended into <tt>qcManualAssessorData/incidentalFindings</tt>
+</td>
 </tr>
 <tr class="b"><td align="left">lesion</td>
+<td align="left">Appended into <tt>qcManualAssessorData/incidentalFindings</tt>
+</td>
 </tr>
 <tr class="a"><td align="left">atrophy</td>
+<td align="left">Appended into <tt>qcManualAssessorData/incidentalFindings</tt>
+</td>
 </tr>
 <tr class="b"><td align="left">infarction</td>
+<td align="left">Appended into <tt>qcManualAssessorData/incidentalFindings</tt>
+</td>
 </tr>
 <tr class="a"><td align="left">trauma</td>
+<td align="left">Appended into <tt>qcManualAssessorData/incidentalFindings</tt>
+</td>
 </tr>
 <tr class="b"><td align="left">metallic</td>
+<td align="left">Appended into <tt>qcManualAssessorData/incidentalFindings</tt>
+</td>
 </tr>
 <tr class="a"><td align="left">nph</td>
+<td align="left">Appended into <tt>qcManualAssessorData/incidentalFindings</tt>
+</td>
 </tr>
 <tr class="b"><td align="left">edema</td>
+<td align="left">Appended into <tt>qcManualAssessorData/incidentalFindings</tt>
+</td>
 </tr>
 <tr class="a"><td align="left">other</td>
+<td align="left">Appended into <tt>qcManualAssessorData/incidentalFindings</tt>
+</td>
 </tr>
 <tr class="b"><td align="left">pass</td>
+<td align="left"><tt>qcManualAssessorData/pass</tt>
+</td>
 </tr>
 <tr class="a"><td align="left">pay_site</td>
+<td align="left"><tt>qcManualAssessorData/payable</tt>
+</td>
 </tr>
 <tr class="b"><td align="left">comments</td>
+<td align="left"><tt>qcManualAssessorData/comments</tt>
+</td>
 </tr>
 </tbody>
 </table>
@@ -196,38 +232,60 @@ XNAT_00001,20001,20091009,154053.183,3,localizer,102,1237567264,19150,bjb45,1,,,
 <div class="section"><h3>Required Columns</h3>
 <table class="bodyTable"><tbody><tr class="a"><td align="left"><b>CSV Column</b>
 </td>
+<td align="left"><b>xnat.xsd Mapping</b>
+</td>
 </tr>
-<tr class="b"><td align="left">patientid</td>
+<tr class="b"><td align="left">seriesnumber</td>
+<td align="left"><tt>mrQcScanData/imageScan_ID</tt>
+</td>
 </tr>
-<tr class="a"><td align="left">seriesnumber</td>
+<tr class="a"><td align="left">in_bgr</td>
+<td align="left"><tt>mrQcScanData/blurring</tt>
+</td>
 </tr>
-<tr class="b"><td align="left">timestamp</td>
+<tr class="b"><td align="left">in_flow</td>
+<td align="left"><tt>mrQcScanData/flow</tt>
+</td>
 </tr>
-<tr class="a"><td align="left">initials</td>
+<tr class="a"><td align="left">in_other</td>
+<td align="left"><tt>mrQcScanData/otherImageArtifacts</tt>
+</td>
 </tr>
-<tr class="b"><td align="left">in_bgr</td>
+<tr class="b"><td align="left">wrap</td>
+<td align="left"><tt>mrQcScanData/wrap</tt>
+</td>
 </tr>
-<tr class="a"><td align="left">in_flow</td>
+<tr class="a"><td align="left">headcoverage</td>
+<td align="left"><tt>mrQcScanData/coverage</tt>
+</td>
 </tr>
-<tr class="b"><td align="left">in_other</td>
+<tr class="b"><td align="left">inhomogeneity</td>
+<td align="left"><tt>mrQcScanData/inhomogeneity</tt>
+</td>
 </tr>
-<tr class="a"><td align="left">wrap</td>
+<tr class="a"><td align="left">ip_motion</td>
+<td align="left"><tt>mrQcScanData/interpacMotion</tt>
+</td>
 </tr>
-<tr class="b"><td align="left">headcoverage</td>
+<tr class="b"><td align="left">marker</td>
+<td align="left">Merged into <tt>qcManualAssessorData/stereotacticMarker</tt>
+</td>
 </tr>
-<tr class="a"><td align="left">inhomogeneity</td>
+<tr class="a"><td align="left">pass</td>
+<td align="left"><tt>mrQcScanData/pass</tt>
+</td>
 </tr>
-<tr class="b"><td align="left">ip_motion</td>
+<tr class="b"><td align="left">comments</td>
+<td align="left"><tt>mrQcScanData/comments</tt>
+</td>
 </tr>
-<tr class="a"><td align="left">marker</td>
+<tr class="a"><td align="left">susceptibility</td>
+<td align="left"><tt>mrQcScanData/susceptibility</tt>
+</td>
 </tr>
-<tr class="b"><td align="left">pass</td>
-</tr>
-<tr class="a"><td align="left">comments</td>
-</tr>
-<tr class="b"><td align="left">susceptibility</td>
-</tr>
-<tr class="a"><td align="left">head_motion</td>
+<tr class="b"><td align="left">head_motion</td>
+<td align="left"><tt>mrQcScanData/motion</tt>
+</td>
 </tr>
 </tbody>
 </table>
