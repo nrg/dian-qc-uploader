@@ -4,54 +4,102 @@
 Inclusion File
 
   Details whether the participant meets the study criteria and the overall passing
-  and payable status.
+  and payable status. File contains a single line for each session.
 
 * Required Columns
-  
-*---------
-patientid
-timestamp
-initials
-surgery
-hemmorhage
-dev_anomaly
-lesion
-atrophy
-infarction
-trauma
-metallic
-nph
-edema
-other
-pass
-pay_site
-comments
-  
-  
-* Sample
 
-*-----*------*
-|cell | cell |
-*-----*------*
-| cell | cell |
-*-----*------*
+*----------------+
+| <<CSV Column>> |
+*----------------+
+| patientid      | 
+*----------------+
+| timestamp      |
+*----------------+
+| initials       |
+*----------------+
+| surgery        |
+*----------------+
+| hemmorhage     |
+*----------------+
+| dev_anomaly    |
+*----------------+
+| lesion         |
+*----------------+
+| atrophy        |
+*----------------+
+| infarction     |
+*----------------+
+| trauma         |
+*----------------+
+| metallic       |
+*----------------+
+| nph            |
+*----------------+
+| edema          |
+*----------------+
+| other          |
+*----------------+
+| pass           |
+*----------------+
+| pay_site       |
+*----------------+
+| comments       |
+*----------------+
+
+* Sample File
+
++--
+patientid,patientsname,studydate,studytime,magneticfieldstrength,seriesdescription,key_medical,timestamp,fkey_study,initials,nomedical,surgery,hemmorhage,dev_anomaly,lesion,atrophy,infarction,trauma,metallic,nph,edema,other,pass,quarantine,pay_site,comments,rescan,subjectinclusion
+XNAT_00001,20001,20091009,154053.183,3,localizer,102,1237567264,19150,bjb45,1,,,,,,,,,,,,1,1,1,,0,1
++--
+
 
 Quality File
 
-  
-patientid
-seriesnumber
-timestamp
-initials
-in_bgr
-in_flow
-in_other
-wrap
-headcoverage
-inhomogeneity
-ip_motion
-marker
-pass
-comments
-pp_inhomogeneity	susceptibility	head_motion																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																								
-  
+  Details about QC on each individual scan. File contains a line for each scan 
+  for each session.
+
+* Required Columns
+
+*----------------+
+| <<CSV Column>> |
+*----------------+  
+| patientid      |
+*----------------+
+| seriesnumber   |
+*----------------+
+| timestamp      |
+*----------------+
+| initials       |
+*----------------+
+| in_bgr         |
+*----------------+
+| in_flow        |
+*----------------+
+| in_other       |
+*----------------+
+| wrap           |
+*----------------+
+| headcoverage   |
+*----------------+
+| inhomogeneity  |
+*----------------+
+| ip_motion      |
+*----------------+
+| marker         |
+*----------------+
+| pass           |
+*----------------+
+| comments       |
+*----------------+
+| susceptibility |
+*----------------+
+| head_motion    |
+*----------------+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																					
+
+* Sample File
+
++--
+"patientid","patientsname","studydate","studytime","magneticfieldstrength","seriesnumber","seriesdescription","key_qcquality","timestamp","fkey_series","initials","in_bgr","in_flow","in_other","wrap","headcoverage","inhomogeneity","ip_motion","marker","pass","comments","pp_inhomogeneity","susceptibility","head_motion"
+"XNAT_00001",20001,20091009,154053.18,3,2,"localizer",700,1237967054,123456,"abc123",0,0,0,0,0,0,-1,2,1,,,-1,-1
+"XNAT_00001",20001,20091009,154053.18,3,4,"Pha_Images",701,1237961958,123457,"abc123",0,0,0,0,0,1,-1,0,1,,,-1,-1

@@ -1,3 +1,21 @@
-  First line of first paragraph.
-  Second line of first paragraph.
-  Third line of first paragraph.
+Requirements
+
+  * Java >=1.5
+
+Download
+
+  The latest dian-qc-uploader can be downloaded from
+  {{http://github.com/johnpaulett/dian-qc-uploader/downloads}}
+
+Install
+  
+  The dian-qc-uploader is designed as a self-contained application that can be
+  use from anywhere.  When invoking the <<<java -jar>>> command, simple pass the
+  location of the dian-qc-uploader.jar file.  If this file is in your currenty
+  working directory, you can run:
+  
+---
+java -jar dian-qc-uploader.jar <options>
+---
+
+  Details on dian-qc-uploader {{{index.html}usage}}.

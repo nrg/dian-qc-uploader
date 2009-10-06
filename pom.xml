@@ -15,6 +15,7 @@
 	<developers>
 		<developer>
 			<name>John Paulett</name>
+			<organization>Neuroinformatics Research Group</organization>
 		</developer>
 	</developers>
 
@@ -22,6 +23,11 @@
 		<name>Neuroinformatics Research Group</name>
 		<url>http://nrg.wustl.edu</url>
 	</organization>
+
+	<issueManagement>
+		<system>GitHub</system>
+		<url>http://github.com/johnpaulett/dian-qc-uploader/issues</url>
+	</issueManagement>
 
 	<scm>
 		<connection>scm:git:git://github.com/johnpaulett/dian-qc-upload.git</connection>
@@ -65,9 +71,6 @@
 				<artifactId>maven-javadoc-plugin</artifactId>
 				<version>2.6</version>
 			</plugin>
-			<!--
-				<plugin> <artifactId>maven-clover-plugin</artifactId> </plugin>
-			-->
 		</plugins>
 	</reporting>
 
@@ -156,14 +159,6 @@
 
 
 		</plugins>
-		<!--
-			<plugins> <plugin> <groupId>org.codehaus.groovy.maven</groupId>
-			<artifactId>gmaven-plugin</artifactId> <version>1.0-rc-3</version>
-			<executions> <execution> <goals> <goal>generateStubs</goal>
-			<goal>compile</goal> <goal>generateTestStubs</goal>
-			<goal>testCompile</goal> </goals> </execution> </executions>
-			</plugin> </plugins>
-		-->
 	</build>
 
 </project>

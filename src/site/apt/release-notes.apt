@@ -1,0 +1,6 @@
+Release Notes
+
+* 0.1
+
+  Initial release. Includes ability to map CSV QC files into XML and upload
+  that XML into an XNAT server.
