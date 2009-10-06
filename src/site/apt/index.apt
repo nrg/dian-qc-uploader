@@ -1,0 +1,27 @@
+  The DIAN Quality Control Uploader is a tool that is designed to parse and
+store Quality Control reports that are store in comma separated value files.
+The tool submits the reports to an XNAT instance via the XNAT REST API.
+
+
+Usage
+
++--
+usage: java -jar dian-qc-uploader.jar -s <server> -u <user> -p <password>
+            <qualityfile> <inclusionfile>
+ -h,--help                  Show usage information
+ -p,--password <password>   XNAT password
+ -s,--server <server>       XNAT server URL, including protocol, port, and
+                            XNAT path (if necessary)
+ -u,--user <user>           XNAT username
++--
+
+Example
+
+  Example inclusion file
+
+---
+a,b,c
+---
+
+
+  some example usage

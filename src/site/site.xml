@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project>
+	<body>
+		<links>
+			<item name="XNAT" href="http://xnat.org" />
+			<item name="NRG" href="http://nrg.wustl.edu" />
+		</links>
+
+		<menu name="Overview">
+			<item name="Introduction" href="index.html" />
+			<item name="Download" href="download.html" />
+			<item name="Release Notes" href="release-notes.html" />
+			<item name="QC File Specification" href="qc-file-specification.html" />
+		</menu>
+
+		<menu ref="reports" />
+
+	</body>
+</project>

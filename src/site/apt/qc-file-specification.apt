@@ -1,0 +1,57 @@
+  The DIAN Quality Control Uploader requires that certain fields exist in the specific
+  files.
+
+Inclusion File
+
+  Details whether the participant meets the study criteria and the overall passing
+  and payable status.
+
+* Required Columns
+  
+*---------
+patientid
+timestamp
+initials
+surgery
+hemmorhage
+dev_anomaly
+lesion
+atrophy
+infarction
+trauma
+metallic
+nph
+edema
+other
+pass
+pay_site
+comments
+  
+  
+* Sample
+
+*-----*------*
+|cell | cell |
+*-----*------*
+| cell | cell |
+*-----*------*
+
+Quality File
+
+  
+patientid
+seriesnumber
+timestamp
+initials
+in_bgr
+in_flow
+in_other
+wrap
+headcoverage
+inhomogeneity
+ip_motion
+marker
+pass
+comments
+pp_inhomogeneity	susceptibility	head_motion																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																								
+  
