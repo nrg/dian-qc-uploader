@@ -19,4 +19,4 @@ Building From Source
   
   ## Build the documentation (builds in ../dian-qc-uploader-site, which is the 
   ## gh-pages git branch of the project)
-  mvn site:deploy
+  mvn site site:deploy
