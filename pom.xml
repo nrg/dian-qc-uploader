@@ -24,10 +24,18 @@
 	</organization>
 
 	<scm>
-		<connection>scm:git:git://github.com/johnpaulett/dian-qc-upload</connection>
-		<developerConnection>scm:git:git://github.com/johnpaulett/dian-qc-upload</developerConnection>
+		<connection>scm:git:git://github.com/johnpaulett/dian-qc-upload.git</connection>
+		<developerConnection>scm:git:git://github.com/johnpaulett/dian-qc-upload.git</developerConnection>
 		<url>http://github.com/johnpaulett/dian-qc-upload</url>
 	</scm>
+
+	<distributionManagement>
+		<site>
+			<id>gh-pages</id>
+			<!-- This gets automatically pushed to the gh-pages branch. -->
+			<url>file:${project.basedir}/../${project.artifactId}-site</url>
+		</site>
+	</distributionManagement>
 
 	<mailingLists>
 		<mailingList>
@@ -107,24 +115,6 @@
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>3.8.2</version>
-			<scope>test</scope>
-		</dependency>
-
-		<!-- unused -->
-		<dependency>
-			<groupId>com.google.code.google-collections</groupId>
-			<artifactId>google-collect</artifactId>
-			<version>snapshot-20080530</version>
-		</dependency>
-		<dependency>
-			<groupId>org.mockito</groupId>
-			<artifactId>mockito-all</artifactId>
-			<version>1.8.0</version>
-		</dependency>
-		<dependency>
-			<groupId>xmlunit</groupId>
-			<artifactId>xmlunit</artifactId>
-			<version>1.2</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
