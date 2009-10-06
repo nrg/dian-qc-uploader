@@ -5,9 +5,9 @@ Developed by the `Neuroinformatics Research Group <http://nrg.wustl.edu>`_ for
 uploading quality control data for the DIAN study to the `CNDA 
 <http://cnda.wustl.edu>`_
 
-Documentation: http://johnpaulett.github.com/dian-qc-uploader/
-Source: http://github.com/johnpaulett/dian-qc-uploader
-Issues: http://github.com/johnpaulett/dian-qc-uploader/issues
+* Documentation: http://johnpaulett.github.com/dian-qc-uploader/
+* Source: http://github.com/johnpaulett/dian-qc-uploader
+* Issues: http://github.com/johnpaulett/dian-qc-uploader/issues
 
 Building From Source
 --------------------
