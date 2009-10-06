@@ -12,9 +12,11 @@ Issues: http://github.com/johnpaulett/dian-qc-uploader/issues
 Building From Source
 --------------------
 
-## Generate the executable JAR
-mvn clean assembly:assembly
+::
 
-## Build the documentation (builds in ../dian-qc-uploader-site, which is the 
-## gh-pages git branch of the project)
-mvn site:deploy
+  ## Generate the executable JAR
+  mvn clean assembly:assembly
+  
+  ## Build the documentation (builds in ../dian-qc-uploader-site, which is the 
+  ## gh-pages git branch of the project)
+  mvn site:deploy
