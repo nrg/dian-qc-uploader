@@ -50,7 +50,7 @@ class SessionAssessment {
 					"xnat:date" DateUtil.dateFormat(date)
 					"xnat:time" DateUtil.timeFormat(date)
 				}
-				"xnat:imageSession_ID" session_id
+				"xnat:imageSession_ID" system_session_id
 				if (rater){
 					"xnat:rater" rater
 				}

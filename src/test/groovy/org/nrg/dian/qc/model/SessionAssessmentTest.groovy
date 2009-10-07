@@ -31,6 +31,7 @@ class SessionAssessmentTest extends ModelXmlTestCase {
 		session.project = "Demo"
 		session.date = DateUtil.secondsToDate(1237926736)
 		session.session_id = "ABC1234"
+		session.system_session_id = "INTERNAL_ID_1234"
 		session.rater = "Jane Doe"
 		session.stereotacticMarker = "0"
 		session.incidentalFindings = "There were several lesions\ntest\n"
@@ -47,7 +48,7 @@ class SessionAssessmentTest extends ModelXmlTestCase {
 			"xsi:schemaLocation":"http://nrg.wustl.edu/xnat plugin-resources/project-skeletons/xnat/src/schemas/xnat/xnat.xsd"){
 				"xnat:date" "2009-03-24"
 				"xnat:time" "15:32:16"
-				"xnat:imageSession_ID" "ABC1234"
+				"xnat:imageSession_ID" "INTERNAL_ID_1234"
 				"xnat:rater" "Jane Doe"
 				"xnat:stereotacticMarker" "0"
 				"xnat:incidentalFindings" "There were several lesions\ntest\n"
