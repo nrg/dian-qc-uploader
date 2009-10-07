@@ -45,10 +45,10 @@ class SessionAssessmentTest extends ModelXmlTestCase {
 			"xmlns:xnat":"http://nrg.wustl.edu/xnat",
 			"xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance", 
 			"xsi:schemaLocation":"http://nrg.wustl.edu/xnat plugin-resources/project-skeletons/xnat/src/schemas/xnat/xnat.xsd"){
-				"xnat:imageSession_ID" "ABC1234"
-				"xnat:rater" "Jane Doe"
 				"xnat:date" "2009-03-24"
 				"xnat:time" "15:32:16"
+				"xnat:imageSession_ID" "ABC1234"
+				"xnat:rater" "Jane Doe"
 				"xnat:stereotacticMarker" "0"
 				"xnat:incidentalFindings" "There were several lesions\ntest\n"
 				"xnat:scans" {}

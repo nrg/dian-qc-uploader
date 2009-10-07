@@ -46,13 +46,13 @@ class SessionAssessment {
 			"xmlns:xnat":"http://nrg.wustl.edu/xnat",
 			"xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance", 
 			"xsi:schemaLocation":"http://nrg.wustl.edu/xnat plugin-resources/project-skeletons/xnat/src/schemas/xnat/xnat.xsd"){ 
-				"xnat:imageSession_ID" session_id
-				if (rater){
-					"xnat:rater" rater
-				}
 				if (date){
 					"xnat:date" DateUtil.dateFormat(date)
 					"xnat:time" DateUtil.timeFormat(date)
+				}
+				"xnat:imageSession_ID" session_id
+				if (rater){
+					"xnat:rater" rater
 				}
 				if (stereotacticMarker){
 					"xnat:stereotacticMarker" stereotacticMarker
