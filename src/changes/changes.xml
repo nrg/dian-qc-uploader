@@ -4,6 +4,13 @@
 		<author>John Paulett</author>
 	</properties>
 	<body>
+		<release version="0.2" date="" description="">
+			<action dev="jpaulett" type="update">
+				Fixed XML output to use the
+				system's image session ID (not the label) and to put the date and
+				time before the imageSession_ID, per the schema.
+			</action>
+		</release>
 		<release version="0.1" date="2009-10-06" description="Initial release">
 			<action dev="jpaulett" type="add">
 				Initial release. Includes ability
