@@ -10,7 +10,7 @@ import antlr.collections.List;
 class DataMapper {
 	private static final String SESSION_ID = "patientid"
 
-		def map(qualityRecords, inclusionRecords){
+	def map(qualityRecords, inclusionRecords){
 		def retVal = []
 		
 		inclusionRecords.each { inclusionRecord ->
@@ -98,7 +98,7 @@ class DataMapper {
 	 * Replace empty items with nulls
 	 */
 	def clearEmpty(item){
-		if (item.trim().size() == 0){
+		if (item == null || item.trim().size() == 0){
 			return null
 		}
 		return item
