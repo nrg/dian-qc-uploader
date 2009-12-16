@@ -24,6 +24,8 @@ class SessionAssessment {
 	def comments
 	def pass
 	def payable
+	def rescan
+	def quarantineRelease
 	
 	List<MrScanAssessment> scans = [];
 
@@ -70,6 +72,12 @@ class SessionAssessment {
 				"xnat:pass" pass
 				if (payable){
 					"xnat:payable" payable
+				}
+				if (rescan){
+					"xnat:rescan" rescan
+				}
+				if (quarantineRelease){
+					"xnat:quarantineRelease" quarantineRelease
 				}
 			}
 		}

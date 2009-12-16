@@ -20,6 +20,8 @@ class DataMapper {
 			session.rater = inclusionRecord["initials"]
 			session.pass = score(inclusionRecord["pass"])
 			session.payable = score(inclusionRecord["pay_site"])
+			session.rescan = score(inclusionRecord["rescan"])
+			session.quarantineRelease = score(inclusionRecord["quarantineRelease"])
 			session.comments = clearEmpty(inclusionRecord["comments"])
 			
 			// Map all the inclusion criteria into the incidental findings
