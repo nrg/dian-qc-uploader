@@ -23,7 +23,7 @@ class DocumentUploaderTest extends GroovyTestCase {
 		session = new SessionAssessment(project:"DIAN_1", subject_id:"pat123",
                         				system_session_id:"XNAT_001", 
                         				session_id: "XNAT_DIAN_001", 
-                        				date: DateUtil.secondsToDate(1237926736))
+                        				date: Date.parse(DateUtil.YYYY_MM_DD, "2009-03-24"))
 		uploader.upload(session)
 	}
 }

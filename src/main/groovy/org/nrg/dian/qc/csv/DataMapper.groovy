@@ -57,7 +57,7 @@ class DataMapper {
 				scan.pass = score(record["pass"])
 				
 				// set the time to the last scan's time
-				session.date = DateUtil.secondsToDate(Long.parseLong(record['timestamp']))
+				session.date = Date.parse(DateUtil.YYYY_MM_DD, record['sdate'])
 				
 				// set the sterotactic marker value on the session based upon the
 				// last non-null marker value in the list of scans.

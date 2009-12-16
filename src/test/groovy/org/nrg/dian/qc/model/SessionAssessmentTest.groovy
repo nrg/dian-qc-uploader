@@ -29,7 +29,7 @@ class SessionAssessmentTest extends ModelXmlTestCase {
 	
 	void testToXmlWithProperties(){
 		session.project = "Demo"
-		session.date = DateUtil.secondsToDate(1237926736)
+		session.date = Date.parse(DateUtil.YYYY_MM_DD, "2009-03-24")
 		session.session_id = "ABC1234"
 		session.system_session_id = "INTERNAL_ID_1234"
 		session.rater = "Jane Doe"
@@ -47,7 +47,6 @@ class SessionAssessmentTest extends ModelXmlTestCase {
 			"xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance", 
 			"xsi:schemaLocation":"http://nrg.wustl.edu/xnat plugin-resources/project-skeletons/xnat/src/schemas/xnat/xnat.xsd"){
 				"xnat:date" "2009-03-24"
-				"xnat:time" "15:32:16"
 				"xnat:imageSession_ID" "INTERNAL_ID_1234"
 				"xnat:rater" "Jane Doe"
 				"xnat:stereotacticMarker" "0"
@@ -116,7 +115,7 @@ class SessionAssessmentTest extends ModelXmlTestCase {
 
 	void testMakeId(){
 		session.session_id = "ABC_1234"
-		session.date = DateUtil.secondsToDate(1237926736)
-		assertEquals("ABC_1234_mQC_2009-03-24", session.makeId())
+		session.date = Date.parse(DateUtil.YYYY_MM_DD, "2009-02-28")
+		assertEquals("ABC_1234_mQC_2009-02-28", session.makeId())
 	}
 }

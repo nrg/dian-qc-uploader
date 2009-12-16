@@ -31,7 +31,7 @@ class SessionAssessment {
 		if (session_id) {
 			def timestamp = ""
     		if (date){
-    			timestamp = DateUtil.dateFormat(date)
+    			timestamp = getDateStr()
     		}
 			return "${session_id}_mQC_${timestamp}"
 		}
@@ -47,8 +47,7 @@ class SessionAssessment {
 			"xmlns:xsi":"http://www.w3.org/2001/XMLSchema-instance", 
 			"xsi:schemaLocation":"http://nrg.wustl.edu/xnat plugin-resources/project-skeletons/xnat/src/schemas/xnat/xnat.xsd"){ 
 				if (date){
-					"xnat:date" DateUtil.dateFormat(date)
-					"xnat:time" DateUtil.timeFormat(date)
+					"xnat:date" getDateStr()
 				}
 				"xnat:imageSession_ID" system_session_id
 				if (rater){
@@ -75,5 +74,9 @@ class SessionAssessment {
 			}
 		}
 		return xml.toString()
+	}
+	
+	def getDateStr(){
+		return date.format(DateUtil.YYYY_MM_DD)
 	}
 }
