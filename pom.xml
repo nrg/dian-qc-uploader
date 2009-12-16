@@ -11,7 +11,7 @@
 
 	<packaging>jar</packaging>
 
-	<url>http://johnpaulett.github.com/dian-qc-uploader/</url>
+	<url>http://nrg.github.com/dian-qc-uploader/</url>
 	<developers>
 		<developer>
 			<name>John Paulett</name>
@@ -26,13 +26,13 @@
 
 	<issueManagement>
 		<system>GitHub</system>
-		<url>http://github.com/johnpaulett/dian-qc-uploader/issues</url>
+		<url>http://github.com/nrg/dian-qc-uploader/issues</url>
 	</issueManagement>
 
 	<scm>
-		<connection>scm:git:git://github.com/johnpaulett/dian-qc-uploader.git</connection>
-		<developerConnection>scm:git:git://github.com/johnpaulett/dian-qc-uploader.git</developerConnection>
-		<url>http://github.com/johnpaulett/dian-qc-uploader</url>
+		<connection>scm:git:git://github.com/nrg/dian-qc-uploader.git</connection>
+		<developerConnection>scm:git:git://github.com/nrg/dian-qc-uploader.git</developerConnection>
+		<url>http://github.com/nrg/dian-qc-uploader</url>
 	</scm>
 
 	<distributionManagement>

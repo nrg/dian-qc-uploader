@@ -4,11 +4,14 @@
 		<author>John Paulett</author>
 	</properties>
 	<body>
-		<release version="0.2" date="" description="">
+		<release version="0.2" date="2009-12-16" description="">
 			<action dev="jpaulett" type="update">
 				Fixed XML output to use the
 				system's image session ID (not the label) and to put the date and
 				time before the imageSession_ID, per the schema.
+			</action>
+			<action dev="jpaulett" type="update">
+				Switched to nrg github account as primary location for project.
 			</action>
 		</release>
 		<release version="0.1" date="2009-10-06" description="Initial release">
