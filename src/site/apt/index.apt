@@ -26,5 +26,5 @@ Example Usage
   examples of inclusion.csv and quality.csv. 
 
 +--
-java -jar dian-qc-uploader.jar -s http://localhost:8080/cnda_xnat -u admin -p admin quality.csv inclusion.csv
+java -jar dian-qc-uploader-0.2.jar -s http://cnda.wustl.edu -u admin -p admin quality.csv inclusion.csv
 +--

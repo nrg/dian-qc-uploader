@@ -7,51 +7,53 @@ Inclusion File
   Details whether the participant meets the study criteria and the overall passing
   and payable status. File contains a single line for each session.
 
-* Required Columns
+* Columns
 
-*----------------+-------------------------------------------------------------+
-| <<CSV Column>> | <<xnat.xsd Mapping>>                                        |
-*----------------+-------------------------------------------------------------+
-| patientid      | <<<qcManualAssessorData/imageSession_ID>>>                  |
-*----------------+-------------------------------------------------------------+
-| timestamp      | <<<qcManualAssessorData/date>>> and <<<qcManualAssessorData/time>>> |
-*----------------+-------------------------------------------------------------+
-| initials       | <<<qcManualAssessorData/rater>>>                            |
-*----------------+-------------------------------------------------------------+
-| surgery        | Appended into <<<qcManualAssessorData/incidentalFindings>>> |
-*----------------+-------------------------------------------------------------+
-| hemmorhage     | Appended into <<<qcManualAssessorData/incidentalFindings>>> |
-*----------------+-------------------------------------------------------------+
-| dev_anomaly    | Appended into <<<qcManualAssessorData/incidentalFindings>>> |
-*----------------+-------------------------------------------------------------+
-| lesion         | Appended into <<<qcManualAssessorData/incidentalFindings>>> |
-*----------------+-------------------------------------------------------------+
-| atrophy        | Appended into <<<qcManualAssessorData/incidentalFindings>>> |
-*----------------+-------------------------------------------------------------+
-| infarction     | Appended into <<<qcManualAssessorData/incidentalFindings>>> |
-*----------------+-------------------------------------------------------------+
-| trauma         | Appended into <<<qcManualAssessorData/incidentalFindings>>> |
-*----------------+-------------------------------------------------------------+
-| metallic       | Appended into <<<qcManualAssessorData/incidentalFindings>>> |
-*----------------+-------------------------------------------------------------+
-| nph            | Appended into <<<qcManualAssessorData/incidentalFindings>>> |
-*----------------+-------------------------------------------------------------+
-| edema          | Appended into <<<qcManualAssessorData/incidentalFindings>>> |
-*----------------+-------------------------------------------------------------+
-| other          | Appended into <<<qcManualAssessorData/incidentalFindings>>> |
-*----------------+-------------------------------------------------------------+
-| pass           | <<<qcManualAssessorData/pass>>>                             |
-*----------------+-------------------------------------------------------------+
-| pay_site       | <<<qcManualAssessorData/payable>>>                          |
-*----------------+-------------------------------------------------------------+
-| comments       | <<<qcManualAssessorData/comments>>>                         |
-*----------------+-------------------------------------------------------------+
+*--------------------+-------------------------------------------------------------+--------------+
+| <<CSV Column>>     | <<xnat.xsd Mapping>>                                        | <<Required>> | 
+*--------------------+-------------------------------------------------------------+--------------+
+| patid              | <<<qcManualAssessorData/imageSession_ID>>>                  | Yes          |
+*--------------------+-------------------------------------------------------------+--------------+
+| sdate              | <<<qcManualAssessorData/date>>>                             | Yes          |
+*--------------------+-------------------------------------------------------------+--------------+
+| initials           | <<<qcManualAssessorData/rater>>>                            | No           |
+*--------------------+-------------------------------------------------------------+--------------+
+| surgery            | Appended into <<<qcManualAssessorData/incidentalFindings>>> | No           |
+*--------------------+-------------------------------------------------------------+--------------+
+| hemmorhage         | Appended into <<<qcManualAssessorData/incidentalFindings>>> | No           |
+*--------------------+-------------------------------------------------------------+--------------+
+| dev_anomaly        | Appended into <<<qcManualAssessorData/incidentalFindings>>> | No           |
+*--------------------+-------------------------------------------------------------+--------------+
+| lesion             | Appended into <<<qcManualAssessorData/incidentalFindings>>> | No           |
+*--------------------+-------------------------------------------------------------+--------------+
+| atrophy            | Appended into <<<qcManualAssessorData/incidentalFindings>>> | No           |
+*--------------------+-------------------------------------------------------------+--------------+
+| infarction         | Appended into <<<qcManualAssessorData/incidentalFindings>>> | No           |
+*--------------------+-------------------------------------------------------------+--------------+
+| trauma             | Appended into <<<qcManualAssessorData/incidentalFindings>>> | No           |
+*--------------------+-------------------------------------------------------------+--------------+
+| metallic           | Appended into <<<qcManualAssessorData/incidentalFindings>>> | No           |
+*--------------------+-------------------------------------------------------------+--------------+
+| nph                | Appended into <<<qcManualAssessorData/incidentalFindings>>> | No           |
+*--------------------+-------------------------------------------------------------+--------------+
+| edema              | Appended into <<<qcManualAssessorData/incidentalFindings>>> | No           |
+*--------------------+-------------------------------------------------------------+--------------+
+| other              | Appended into <<<qcManualAssessorData/incidentalFindings>>> | No           |
+*--------------------+-------------------------------------------------------------+--------------+
+| pass               | <<<qcManualAssessorData/pass>>>                             | Yes          |
+*--------------------+-------------------------------------------------------------+--------------+
+| pay_site           | <<<qcManualAssessorData/payable>>>                          | No           |
+*--------------------+-------------------------------------------------------------+--------------+
+| rescan             | <<<qcManualAssessorData/rescan>>>                           | No           |
+*--------------------+-------------------------------------------------------------+--------------+
+| comments           | <<<qcManualAssessorData/comments>>>                         | No           |
+*--------------------+-------------------------------------------------------------+--------------+
 
 * Sample File
 
 +--
-patientid,patientsname,studydate,studytime,magneticfieldstrength,seriesdescription,key_medical,timestamp,fkey_study,initials,nomedical,surgery,hemmorhage,dev_anomaly,lesion,atrophy,infarction,trauma,metallic,nph,edema,other,pass,quarantine,pay_site,comments,rescan,subjectinclusion
-XNAT_00001,20001,20091009,154053.183,3,localizer,102,1237567264,19150,bjb45,1,,,,,,,,,,,,1,1,1,,0,1
+patid,sdate,field,coil,pass,quarantine,rescan,pay_site,comments
+5894213_MR1,20090324,3,HeadMatrix,1,1,0,1,""
 +--
 
 
@@ -62,39 +64,39 @@ Quality File
 
 * Required Columns
 
-*----------------+-------------------------------------------------------------+
-| <<CSV Column>> | <<xnat.xsd Mapping>>                                        |    
-*----------------+-------------------------------------------------------------+
-| seriesnumber   | <<<mrQcScanData/imageScan_ID>>>                             |
-*----------------+-------------------------------------------------------------+
-| in_bgr         | <<<mrQcScanData/blurring>>>                                 |
-*----------------+-------------------------------------------------------------+
-| in_flow        | <<<mrQcScanData/flow>>>                                     |
-*----------------+-------------------------------------------------------------+
-| in_other       | <<<mrQcScanData/otherImageArtifacts>>>                      |
-*----------------+-------------------------------------------------------------+
-| wrap           | <<<mrQcScanData/wrap>>>                                     |
-*----------------+-------------------------------------------------------------+
-| headcoverage   | <<<mrQcScanData/coverage>>>                                 |
-*----------------+-------------------------------------------------------------+
-| inhomogeneity  | <<<mrQcScanData/inhomogeneity>>>                            |
-*----------------+-------------------------------------------------------------+
-| ip_motion      | <<<mrQcScanData/interpacMotion>>>                           |
-*----------------+-------------------------------------------------------------+
-| marker         | Merged into <<<qcManualAssessorData/stereotacticMarker>>>   |     
-*----------------+-------------------------------------------------------------+
-| pass           | <<<mrQcScanData/pass>>>                                     |
-*----------------+-------------------------------------------------------------+
-| comments       | <<<mrQcScanData/comments>>>                                 |
-*----------------+-------------------------------------------------------------+
-| susceptibility | <<<mrQcScanData/susceptibility>>>                           |
-*----------------+-------------------------------------------------------------+
-| head_motion    | <<<mrQcScanData/motion>>>                                   |
-*----------------+-------------------------------------------------------------+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																				
+*----------------+-------------------------------------------------------------+--------------+
+| <<CSV Column>> | <<xnat.xsd Mapping>>                                        | Required     |
+*----------------+-------------------------------------------------------------+--------------+
+| seriesnumber   | <<<mrQcScanData/imageScan_ID>>>                             | Yes          |
+*----------------+-------------------------------------------------------------+--------------+
+| in_bgr         | <<<mrQcScanData/blurring>>>                                 | No           |
+*----------------+-------------------------------------------------------------+--------------+
+| in_flow        | <<<mrQcScanData/flow>>>                                     | No           |
+*----------------+-------------------------------------------------------------+--------------+
+| in_other       | <<<mrQcScanData/otherImageArtifacts>>>                      | No           |
+*----------------+-------------------------------------------------------------+--------------+
+| wrap           | <<<mrQcScanData/wrap>>>                                     | No           |
+*----------------+-------------------------------------------------------------+--------------+
+| headcoverage   | <<<mrQcScanData/coverage>>>                                 | No           |
+*----------------+-------------------------------------------------------------+--------------+
+| inhomogeneity  | <<<mrQcScanData/inhomogeneity>>>                            | No           |
+*----------------+-------------------------------------------------------------+--------------+
+| ip_motion      | <<<mrQcScanData/interpacMotion>>>                           | No           |
+*----------------+-------------------------------------------------------------+--------------+
+| marker         | Merged into <<<qcManualAssessorData/stereotacticMarker>>>   | No           |
+*----------------+-------------------------------------------------------------+--------------+
+| pass           | <<<mrQcScanData/pass>>>                                     | Yes          |
+*----------------+-------------------------------------------------------------+--------------+
+| comments       | <<<mrQcScanData/comments>>>                                 | No           |
+*----------------+-------------------------------------------------------------+--------------+
+| susceptibility | <<<mrQcScanData/susceptibility>>>                           | No           |
+*----------------+-------------------------------------------------------------+--------------+
+| head_motion    | <<<mrQcScanData/motion>>>                                   | No           |
+*----------------+-------------------------------------------------------------+--------------+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																
 
 * Sample File
 
 +--
-"patientid","patientsname","studydate","studytime","magneticfieldstrength","seriesnumber","seriesdescription","key_qcquality","timestamp","fkey_series","initials","in_bgr","in_flow","in_other","wrap","headcoverage","inhomogeneity","ip_motion","marker","pass","comments","pp_inhomogeneity","susceptibility","head_motion"
-"XNAT_00001",20001,20091009,154053.18,3,2,"localizer",700,1237967054,123456,"abc123",0,0,0,0,0,0,-1,2,1,,,-1,-1
-"XNAT_00001",20001,20091009,154053.18,3,4,"Pha_Images",701,1237961958,123457,"abc123",0,0,0,0,0,1,-1,0,1,,,-1,-1
+patid,sdate,field,coil,seriesnumber,seriesdescription,in_bgr,in_flow,in_other,wrap,headcoverage,susceptibility,head_motion,ip_motion,marker,pass,comments
+5894213_MR1,20090324,3,HeadMatrix,12,"SWI_Images",1,0,0,0,0,-1,-1,-1,0,1,""
+5894213_MR1,20090324,3,HeadMatrix,8,"MoCoSeries",0,0,0,0,0,-1,-1,-1,0,1,""
