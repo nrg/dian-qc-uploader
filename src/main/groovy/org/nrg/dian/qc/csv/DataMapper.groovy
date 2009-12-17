@@ -21,7 +21,6 @@ class DataMapper {
 			session.pass = score(inclusionRecord["pass"])
 			session.payable = score(inclusionRecord["pay_site"])
 			session.rescan = score(inclusionRecord["rescan"])
-			session.quarantineRelease = score(inclusionRecord["quarantineRelease"])
 			session.comments = clearEmpty(inclusionRecord["comments"])
 			
 			// Map all the inclusion criteria into the incidental findings
@@ -59,7 +58,7 @@ class DataMapper {
 				scan.pass = score(record["pass"])
 				
 				// set the time to the last scan's time
-				session.date = Date.parse(DateUtil.YYYY_MM_DD, record['sdate'])
+				session.date = Date.parse(DateUtil.YYYYMMDD, record['sdate'])
 				
 				// set the sterotactic marker value on the session based upon the
 				// last non-null marker value in the list of scans.

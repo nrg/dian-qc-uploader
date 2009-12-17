@@ -39,7 +39,6 @@ class SessionAssessmentTest extends ModelXmlTestCase {
 		session.pass = "1"
 		session.payable = "1"
 		session.rescan = "0"
-		session.quarantineRelease = "1"
 		
 		def expected = builder.bind{
 			mkp.xmlDeclaration()
@@ -58,7 +57,6 @@ class SessionAssessmentTest extends ModelXmlTestCase {
 				"xnat:pass" "1"
 				"xnat:payable" "1"
 				"xnat:rescan" "0"
-				"xnat:quarantineRelease" "1"
 			}
 		}
 		assertExpectedXml(expected, session)
