@@ -225,8 +225,8 @@
 </table>
 </div>
 <div class="section"><h3>Sample File</h3>
-<div class="source"><pre>patientid,patientsname,studydate,studytime,magneticfieldstrength,seriesdescription,key_medical,timestamp,fkey_study,initials,nomedical,surgery,hemmorhage,dev_anomaly,lesion,atrophy,infarction,trauma,metallic,nph,edema,other,pass,quarantine,pay_site,comments,rescan,subjectinclusion
-XNAT_00001,20001,20091009,154053.183,3,localizer,102,1237567264,19150,bjb45,1,,,,,,,,,,,,1,1,1,,0,1</pre>
+<div class="source"><pre>patid,sdate,field,coil,pass,quarantine,rescan,pay_site,comments
+5894213_MR1,20090324,3,HeadMatrix,1,1,0,1,&quot;&quot;</pre>
 </div>
 </div>
 </div>
@@ -293,9 +293,9 @@ XNAT_00001,20001,20091009,154053.183,3,localizer,102,1237567264,19150,bjb45,1,,,
 </table>
 </div>
 <div class="section"><h3>Sample File</h3>
-<div class="source"><pre>&quot;patientid&quot;,&quot;patientsname&quot;,&quot;studydate&quot;,&quot;studytime&quot;,&quot;magneticfieldstrength&quot;,&quot;seriesnumber&quot;,&quot;seriesdescription&quot;,&quot;key_qcquality&quot;,&quot;timestamp&quot;,&quot;fkey_series&quot;,&quot;initials&quot;,&quot;in_bgr&quot;,&quot;in_flow&quot;,&quot;in_other&quot;,&quot;wrap&quot;,&quot;headcoverage&quot;,&quot;inhomogeneity&quot;,&quot;ip_motion&quot;,&quot;marker&quot;,&quot;pass&quot;,&quot;comments&quot;,&quot;pp_inhomogeneity&quot;,&quot;susceptibility&quot;,&quot;head_motion&quot;
-&quot;XNAT_00001&quot;,20001,20091009,154053.18,3,2,&quot;localizer&quot;,700,1237967054,123456,&quot;abc123&quot;,0,0,0,0,0,0,-1,2,1,,,-1,-1
-&quot;XNAT_00001&quot;,20001,20091009,154053.18,3,4,&quot;Pha_Images&quot;,701,1237961958,123457,&quot;abc123&quot;,0,0,0,0,0,1,-1,0,1,,,-1,-1</pre>
+<div class="source"><pre>patid,sdate,field,coil,seriesnumber,seriesdescription,in_bgr,in_flow,in_other,wrap,headcoverage,susceptibility,head_motion,ip_motion,marker,pass,comments
+5894213_MR1,20090324,3,HeadMatrix,12,&quot;SWI_Images&quot;,1,0,0,0,0,-1,-1,-1,0,1,&quot;&quot;
+5894213_MR1,20090324,3,HeadMatrix,8,&quot;MoCoSeries&quot;,0,0,0,0,0,-1,-1,-1,0,1,&quot;&quot;</pre>
 </div>
 </div>
 </div>
