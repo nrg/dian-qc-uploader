@@ -12,6 +12,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>DIAN Quality Control Uploader - </title>
     <style type="text/css" media="all">
       @import url("./css/maven-base.css");
@@ -19,8 +20,7 @@
       @import url("./css/site.css");
     </style>
     <link rel="stylesheet" href="./css/print.css" type="text/css" media="print" />
-        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-      </head>
+          </head>
   <body class="composite">
     <div id="banner">
                     <span id="bannerLeft">
@@ -42,7 +42,7 @@
   
     
             <div class="xleft">
-        Last Published: 2009-10-06
+        Last Published: 2009-12-17
                       </div>
             <div class="xright">            <a href="http://xnat.org" class="externalLink">XNAT</a>
             |
@@ -90,6 +90,8 @@
               
                 
               
+            
+            
       
             
       
@@ -110,9 +112,55 @@
             
       
               
-        <li class="collapsed">
+            <li class="expanded">
                     <a href="project-info.html">Project Information</a>
-                </li>
+                  <ul>
+                  
+    <li class="none">
+              <strong>About</strong>
+        </li>
+                  
+    <li class="none">
+                    <a href="integration.html">Continuous Integration</a>
+          </li>
+                  
+    <li class="none">
+                    <a href="dependencies.html">Dependencies</a>
+          </li>
+                  
+    <li class="none">
+                    <a href="issue-tracking.html">Issue Tracking</a>
+          </li>
+                  
+    <li class="none">
+                    <a href="mail-lists.html">Mailing Lists</a>
+          </li>
+                  
+    <li class="none">
+                    <a href="plugin-management.html">Plugin Management</a>
+          </li>
+                  
+    <li class="none">
+                    <a href="license.html">Project License</a>
+          </li>
+                  
+    <li class="none">
+                    <a href="plugins.html">Project Plugins</a>
+          </li>
+                  
+    <li class="none">
+                    <a href="project-summary.html">Project Summary</a>
+          </li>
+                  
+    <li class="none">
+                    <a href="team-list.html">Project Team</a>
+          </li>
+                  
+    <li class="none">
+                    <a href="source-repository.html">Source Repository</a>
+          </li>
+              </ul>
+        </li>
               
                 
               
@@ -139,12 +187,8 @@
     </div>
     <div id="bodyColumn">
       <div id="contentBox">
-        <p>The DIAN Quality Control Uploader is a tool that is designed to parse and store <a href="qc-file-specification.html">Quality Control reports</a>
- that are stored in comma separated value files.The tool submits the reports to an <a href="http://xnat.org" class="externalLink">XNAT</a>
- instance via the XNAT <a href="http://nrg.wikispaces.com/XNAT+REST+API" class="externalLink">REST API</a>
-.</p>
-<p><a href="http://github.com/johnpaulett/dian-qc-uploader/downloads" class="externalLink">Download</a>
- the dian-qc-uploader</p>
+        <p>The DIAN Quality Control Uploader is a tool that is designed to parse and store <a href="qc-file-specification.html">Quality Control reports</a> that are stored in comma separated value files.The tool submits the reports to an <a href="http://xnat.org" class="externalLink">XNAT</a> instance via the XNAT <a href="http://nrg.wikispaces.com/XNAT+REST+API" class="externalLink">REST API</a>.</p>
+<p><a href="http://github.com/nrg/dian-qc-uploader/downloads" class="externalLink">Download</a> the dian-qc-uploader</p>
 <div class="section"><h2>Usage</h2>
 <div class="source"><pre>usage: java -jar dian-qc-uploader.jar -s &lt;server&gt; -u &lt;user&gt; -p &lt;password&gt;
             &lt;qualityfile&gt; &lt;inclusionfile&gt;
@@ -156,8 +200,7 @@
 </div>
 </div>
 <div class="section"><h2>Example Usage</h2>
-<p>See the <a href="qc-file-specification.html">QC File Specification</a>
- page for examples of inclusion.csv and quality.csv. </p>
+<p>See the <a href="qc-file-specification.html">QC File Specification</a> page for examples of inclusion.csv and quality.csv. </p>
 <div class="source"><pre>java -jar dian-qc-uploader.jar -s http://localhost:8080/cnda_xnat -u admin -p admin quality.csv inclusion.csv</pre>
 </div>
 </div>
