@@ -52,6 +52,6 @@ class DataMapperTest extends GroovyTestCase {
 	}
 	
 	private def record(patientid, seriesnumber){
-		return ["patientid": patientid, "seriesnumber": seriesnumber]
+		return ["patid": patientid, "seriesnumber": seriesnumber]
 	}
 }

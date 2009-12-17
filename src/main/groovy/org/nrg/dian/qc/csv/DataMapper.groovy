@@ -8,7 +8,7 @@ import antlr.collections.List;
 
 
 class DataMapper {
-	private static final String SESSION_ID = "patientid"
+	private static final String SESSION_ID = "patid"
 
 	def map(qualityRecords, inclusionRecords){
 		def retVal = []
