@@ -42,7 +42,7 @@
   
     
             <div class="xleft">
-        Last Published: 2009-12-17
+        Last Published: 2009-12-18
                       </div>
             <div class="xright">            <a href="http://xnat.org" class="externalLink">XNAT</a>
             |
@@ -187,8 +187,8 @@
     </div>
     <div id="bodyColumn">
       <div id="contentBox">
-        <p>The DIAN Quality Control Uploader is a tool that is designed to parse and store <a href="qc-file-specification.html">Quality Control reports</a> that are stored in comma separated value files.The tool submits the reports to an <a href="http://xnat.org" class="externalLink">XNAT</a> instance via the XNAT <a href="http://nrg.wikispaces.com/XNAT+REST+API" class="externalLink">REST API</a>.</p>
-<p><a href="http://github.com/nrg/dian-qc-uploader/downloads" class="externalLink">Download</a> the dian-qc-uploader</p>
+        <p>The DIAN Quality Control Uploader is a tool that is designed to parse and store <a href="qc-file-specification.html">Quality Control reports</a> that are stored in comma separated value files.The tool submits the reports to an <a class="externalLink" href="http://xnat.org">XNAT</a> instance via the XNAT <a class="externalLink" href="http://nrg.wikispaces.com/XNAT+REST+API">REST API</a>.</p>
+<p><a class="externalLink" href="http://github.com/nrg/dian-qc-uploader/downloads">Download</a> the dian-qc-uploader</p>
 <div class="section"><h2>Usage</h2>
 <div class="source"><pre>usage: java -jar dian-qc-uploader.jar -s &lt;server&gt; -u &lt;user&gt; -p &lt;password&gt;
             &lt;qualityfile&gt; &lt;inclusionfile&gt;
@@ -198,10 +198,11 @@
                             XNAT path (if necessary)
  -u,--user &lt;user&gt;           XNAT username</pre>
 </div>
+<p>Note: The user account must have access to upload data for the projects the subjects are in.</p>
 </div>
 <div class="section"><h2>Example Usage</h2>
 <p>See the <a href="qc-file-specification.html">QC File Specification</a> page for examples of inclusion.csv and quality.csv. </p>
-<div class="source"><pre>java -jar dian-qc-uploader-0.2.jar -s http://cnda.wustl.edu -u admin -p admin quality.csv inclusion.csv</pre>
+<div class="source"><pre>java -jar dian-qc-uploader-0.2.jar -s https://cnda.wustl.edu -u admin -p admin quality.csv inclusion.csv</pre>
 </div>
 </div>
 
