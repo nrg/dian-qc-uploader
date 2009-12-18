@@ -20,11 +20,13 @@ usage: java -jar dian-qc-uploader.jar -s <server> -u <user> -p <password>
  -u,--user <user>           XNAT username
 +--
 
+ Note: The user account must have access to upload data for the projects the subjects are in.
+
 Example Usage
 
   See the {{{qc-file-specification.html}QC File Specification}} page for 
   examples of inclusion.csv and quality.csv. 
 
 +--
-java -jar dian-qc-uploader-0.2.jar -s http://cnda.wustl.edu -u admin -p admin quality.csv inclusion.csv
+java -jar dian-qc-uploader-0.2.jar -s https://cnda.wustl.edu -u admin -p admin quality.csv inclusion.csv
 +--
