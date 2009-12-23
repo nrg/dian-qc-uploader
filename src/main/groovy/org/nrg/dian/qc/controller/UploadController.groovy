@@ -8,10 +8,11 @@ import org.nrg.dian.qc.cli.CommandLine;
 import org.nrg.dian.qc.csv.CsvParser;
 import org.nrg.dian.qc.csv.DataMapper;
 import org.nrg.dian.qc.http.HttpClient;
+import org.nrg.dian.qc.exception.QCException;
 
 /** 
  * Primary entry point in command line program.  Integrates the various pieces 
- * of the application and controlls the flow of data between those pieces.
+ * of the application and controls the flow of data between those pieces.
  */
 class UploadController {
 	def static LOGGER = Logger.getLogger(UploadController.class)
@@ -22,11 +23,17 @@ class UploadController {
 		def sessions = map(options.qualityfile, options.inclusionfile)
 		LOGGER.debug("Finished parsing and combining the CSV files.")
 		sessions.each { session ->
-			LOGGER.debug("Looking up project information for ${session.session_id}")
-			getProjectDirectory(http).addProjectDetails(session)
-			LOGGER.debug("Found ${session.session_id} in ${session.project}")
-			def response = getDocumentUploader(http).upload(session)
-			LOGGER.debug("Finished processing  ${session.session_id}")
+			try {
+				LOGGER.info("Processing ${session.session_id}")
+				LOGGER.debug("Looking up project information for ${session.session_id}")
+				getProjectDirectory(http).addProjectDetails(session)
+				LOGGER.debug("Found ${session.session_id} in ${session.project}")
+				def response = getDocumentUploader(http).upload(session)
+				LOGGER.debug("Finished processing  ${session.session_id}")
+			} catch (QCException e) {
+				LOGGER.error("Could not process ${session.session_id}, must fix and rerun or manually add.")
+				LOGGER.debug(e)
+			}
 		}
 	}
 	

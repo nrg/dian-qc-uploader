@@ -3,6 +3,8 @@ package org.nrg.dian.qc.http;
 import groovy.util.XmlSlurper;
 
 import org.nrg.dian.qc.model.SessionAssessment;
+import org.nrg.dian.qc.exception.SessionNotFound;
+import org.nrg.dian.qc.exception.ProjectListNotFound;
 
 class ProjectDirectory {
 	def http
@@ -24,7 +26,9 @@ class ProjectDirectory {
                 				[format: "xml", xsiType: "xnat:mrSessionData", 
                 				 project:"DIAN_*", label:session_id, 
                 				 column:"ID,subject_ID,label,project,date"])
-		assert response.status == 200
+		if (response.status != 200) {
+			throw new ProjectListNotFound()
+		}
 		return response.data
 	}
 	
@@ -32,8 +36,9 @@ class ProjectDirectory {
 		def results = xml.results
 		// ensure we only found a single session (can not proceed if we did not 
 		// find a record, unsure how to proceed if we receive more than one)
-		assert results.rows.row.size() == 1
-
+		if (results.rows.row.size() != 1) {
+			throw new SessionNotFound()
+		}
 		def retVal = [:]
 		results.columns.column.eachWithIndex {  column, i -> 
 			retVal[column.text()] = results.rows.row.cell[i].text()
