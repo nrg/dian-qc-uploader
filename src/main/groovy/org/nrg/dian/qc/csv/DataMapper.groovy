@@ -4,8 +4,6 @@ import org.nrg.dian.qc.model.MrScanAssessment;
 import org.nrg.dian.qc.util.DateUtil;
 import org.nrg.dian.qc.model.SessionAssessment;
 
-import antlr.collections.List;
-
 
 class DataMapper {
 	private static final String SESSION_ID = "patid"
