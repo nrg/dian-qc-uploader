@@ -4,6 +4,17 @@
 		<author>John Paulett</author>
 	</properties>
 	<body>
+		<release version="0.4" date="2010-05-27" description="">
+			<action dev="jpaulett" type="update">
+				Ease requirements on fields to allow phantom QCs.
+			</action>
+		</release>
+		<release version="0.3" date="2009-12-23" description="">
+			<action dev="jpaulett" type="update">
+				Increase robustness by not treating an error for a single session
+				as fatal for the whole file.
+			</action>
+		</release>
 		<release version="0.2" date="2009-12-17" description="">
 			<action dev="jpaulett" type="update">
 				Fixed XML output to use the
