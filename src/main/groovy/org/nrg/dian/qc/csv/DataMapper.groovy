@@ -84,6 +84,12 @@ class DataMapper {
 	 * metric was not evaluated. 
 	 */
 	def score(item){
+		// allow fields to not exist in file (e.g. phantom files contain less
+		// information compared to the real subject files)
+		if (item == null) {
+                  return null;
+		}
+
 		def value = item.trim()
 		if (value.size() == 0){
 			return "0"
